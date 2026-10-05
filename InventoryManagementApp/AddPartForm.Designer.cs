@@ -46,12 +46,13 @@
             AddPartMinLabel = new Label();
             AddPartMaxLabel = new Label();
             AddPartComLabel = new Label();
+            label1 = new Label();
             SuspendLayout();
             // 
             // InhouseRadioButton
             // 
             InhouseRadioButton.AutoSize = true;
-            InhouseRadioButton.Location = new Point(28, 438);
+            InhouseRadioButton.Location = new Point(134, 12);
             InhouseRadioButton.Name = "InhouseRadioButton";
             InhouseRadioButton.Size = new Size(74, 19);
             InhouseRadioButton.TabIndex = 0;
@@ -62,7 +63,7 @@
             // OutsourcedRadioButton
             // 
             OutsourcedRadioButton.AutoSize = true;
-            OutsourcedRadioButton.Location = new Point(28, 463);
+            OutsourcedRadioButton.Location = new Point(228, 12);
             OutsourcedRadioButton.Name = "OutsourcedRadioButton";
             OutsourcedRadioButton.Size = new Size(87, 19);
             OutsourcedRadioButton.TabIndex = 1;
@@ -72,75 +73,75 @@
             // 
             // AddPartSaveButton
             // 
-            AddPartSaveButton.Location = new Point(174, 426);
+            AddPartSaveButton.Location = new Point(215, 389);
             AddPartSaveButton.Name = "AddPartSaveButton";
-            AddPartSaveButton.Size = new Size(72, 31);
+            AddPartSaveButton.Size = new Size(56, 31);
             AddPartSaveButton.TabIndex = 2;
             AddPartSaveButton.Text = "Save";
             AddPartSaveButton.UseVisualStyleBackColor = true;
             // 
             // AddPartCancelButton
             // 
-            AddPartCancelButton.Location = new Point(174, 463);
+            AddPartCancelButton.Location = new Point(277, 389);
             AddPartCancelButton.Name = "AddPartCancelButton";
-            AddPartCancelButton.Size = new Size(72, 31);
+            AddPartCancelButton.Size = new Size(58, 31);
             AddPartCancelButton.TabIndex = 3;
             AddPartCancelButton.Text = "Cancel";
             AddPartCancelButton.UseVisualStyleBackColor = true;
             // 
             // textBox1
             // 
-            textBox1.Location = new Point(28, 37);
+            textBox1.Location = new Point(150, 78);
             textBox1.Name = "textBox1";
             textBox1.Size = new Size(189, 23);
             textBox1.TabIndex = 4;
             // 
             // textBox2
             // 
-            textBox2.Location = new Point(28, 373);
+            textBox2.Location = new Point(150, 332);
             textBox2.Name = "textBox2";
             textBox2.Size = new Size(189, 23);
             textBox2.TabIndex = 5;
             // 
             // textBox3
             // 
-            textBox3.Location = new Point(28, 255);
+            textBox3.Location = new Point(150, 282);
             textBox3.Name = "textBox3";
-            textBox3.Size = new Size(189, 23);
+            textBox3.Size = new Size(68, 23);
             textBox3.TabIndex = 6;
             // 
             // textBox4
             // 
-            textBox4.Location = new Point(28, 92);
+            textBox4.Location = new Point(150, 130);
             textBox4.Name = "textBox4";
             textBox4.Size = new Size(189, 23);
             textBox4.TabIndex = 7;
             // 
             // textBox5
             // 
-            textBox5.Location = new Point(28, 149);
+            textBox5.Location = new Point(150, 185);
             textBox5.Name = "textBox5";
             textBox5.Size = new Size(189, 23);
             textBox5.TabIndex = 8;
             // 
             // textBox6
             // 
-            textBox6.Location = new Point(28, 202);
+            textBox6.Location = new Point(150, 234);
             textBox6.Name = "textBox6";
             textBox6.Size = new Size(189, 23);
             textBox6.TabIndex = 9;
             // 
             // textBox7
             // 
-            textBox7.Location = new Point(28, 314);
+            textBox7.Location = new Point(266, 282);
             textBox7.Name = "textBox7";
-            textBox7.Size = new Size(189, 23);
+            textBox7.Size = new Size(73, 23);
             textBox7.TabIndex = 10;
             // 
             // AddPartIDLabel
             // 
             AddPartIDLabel.AutoSize = true;
-            AddPartIDLabel.Location = new Point(28, 19);
+            AddPartIDLabel.Location = new Point(123, 81);
             AddPartIDLabel.Name = "AddPartIDLabel";
             AddPartIDLabel.Size = new Size(21, 15);
             AddPartIDLabel.TabIndex = 11;
@@ -149,7 +150,7 @@
             // AddPartNameLabel
             // 
             AddPartNameLabel.AutoSize = true;
-            AddPartNameLabel.Location = new Point(28, 74);
+            AddPartNameLabel.Location = new Point(102, 133);
             AddPartNameLabel.Name = "AddPartNameLabel";
             AddPartNameLabel.Size = new Size(42, 15);
             AddPartNameLabel.TabIndex = 12;
@@ -158,16 +159,17 @@
             // AddPartInvLabel
             // 
             AddPartInvLabel.AutoSize = true;
-            AddPartInvLabel.Location = new Point(28, 131);
+            AddPartInvLabel.Location = new Point(53, 188);
             AddPartInvLabel.Name = "AddPartInvLabel";
             AddPartInvLabel.Size = new Size(91, 15);
             AddPartInvLabel.TabIndex = 13;
             AddPartInvLabel.Text = "Inventory Label:";
+            AddPartInvLabel.Click += AddPartInvLabel_Click;
             // 
             // AddPartPriceLabel
             // 
             AddPartPriceLabel.AutoSize = true;
-            AddPartPriceLabel.Location = new Point(28, 184);
+            AddPartPriceLabel.Location = new Point(107, 237);
             AddPartPriceLabel.Name = "AddPartPriceLabel";
             AddPartPriceLabel.Size = new Size(36, 15);
             AddPartPriceLabel.TabIndex = 14;
@@ -176,7 +178,7 @@
             // AddPartMinLabel
             // 
             AddPartMinLabel.AutoSize = true;
-            AddPartMinLabel.Location = new Point(28, 237);
+            AddPartMinLabel.Location = new Point(112, 285);
             AddPartMinLabel.Name = "AddPartMinLabel";
             AddPartMinLabel.Size = new Size(31, 15);
             AddPartMinLabel.TabIndex = 15;
@@ -185,26 +187,39 @@
             // AddPartMaxLabel
             // 
             AddPartMaxLabel.AutoSize = true;
-            AddPartMaxLabel.Location = new Point(28, 296);
+            AddPartMaxLabel.Location = new Point(228, 285);
             AddPartMaxLabel.Name = "AddPartMaxLabel";
             AddPartMaxLabel.Size = new Size(32, 15);
             AddPartMaxLabel.TabIndex = 16;
             AddPartMaxLabel.Text = "Max:";
+            AddPartMaxLabel.Click += AddPartMaxLabel_Click;
             // 
             // AddPartComLabel
             // 
             AddPartComLabel.AutoSize = true;
-            AddPartComLabel.Location = new Point(28, 355);
+            AddPartComLabel.Location = new Point(-21, 335);
             AddPartComLabel.Name = "AddPartComLabel";
             AddPartComLabel.Size = new Size(165, 15);
             AddPartComLabel.TabIndex = 17;
             AddPartComLabel.Text = "Company Name/ Machine ID:";
+            AddPartComLabel.Click += AddPartComLabel_Click;
+            // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
+            label1.Location = new Point(11, 11);
+            label1.Name = "label1";
+            label1.Size = new Size(55, 15);
+            label1.TabIndex = 18;
+            label1.Text = "Add Part";
             // 
             // AddPartForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(356, 520);
+            ClientSize = new Size(463, 468);
+            Controls.Add(label1);
             Controls.Add(AddPartComLabel);
             Controls.Add(AddPartMaxLabel);
             Controls.Add(AddPartMinLabel);
@@ -225,6 +240,7 @@
             Controls.Add(InhouseRadioButton);
             Name = "AddPartForm";
             Text = " Add Part";
+            Load += AddPartForm_Load;
             ResumeLayout(false);
             PerformLayout();
         }
@@ -249,5 +265,6 @@
         private Label AddPartMinLabel;
         private Label AddPartMaxLabel;
         private Label AddPartComLabel;
+        private Label label1;
     }
 }

@@ -36,7 +36,7 @@
             ProdModifyButton = new Button();
             ProdAddButton = new Button();
             partsDataGrid = new DataGridView();
-            dataGridView1 = new DataGridView();
+            prodDataGrid = new DataGridView();
             ProductSearchButton = new Button();
             PartsSearchButton = new Button();
             label1 = new Label();
@@ -45,7 +45,7 @@
             PartsTextbox = new TextBox();
             ProdTextbox = new TextBox();
             ((System.ComponentModel.ISupportInitialize)partsDataGrid).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)prodDataGrid).BeginInit();
             SuspendLayout();
             // 
             // PartAddButton
@@ -56,6 +56,7 @@
             PartAddButton.TabIndex = 0;
             PartAddButton.Text = "Add";
             PartAddButton.UseVisualStyleBackColor = true;
+            PartAddButton.Click += PartAddButton_Click;
             // 
             // PartModifyButton
             // 
@@ -65,6 +66,7 @@
             PartModifyButton.TabIndex = 1;
             PartModifyButton.Text = "Modify";
             PartModifyButton.UseVisualStyleBackColor = true;
+            PartModifyButton.Click += PartModifyButton_Click;
             // 
             // PartDeleteButton
             // 
@@ -118,14 +120,15 @@
             partsDataGrid.Name = "partsDataGrid";
             partsDataGrid.Size = new Size(560, 220);
             partsDataGrid.TabIndex = 8;
+            partsDataGrid.CellContentClick += partsDataGrid_CellContentClick;
             // 
-            // dataGridView1
+            // prodDataGrid
             // 
-            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Location = new Point(617, 88);
-            dataGridView1.Name = "dataGridView1";
-            dataGridView1.Size = new Size(560, 220);
-            dataGridView1.TabIndex = 9;
+            prodDataGrid.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            prodDataGrid.Location = new Point(617, 88);
+            prodDataGrid.Name = "prodDataGrid";
+            prodDataGrid.Size = new Size(560, 220);
+            prodDataGrid.TabIndex = 9;
             // 
             // ProductSearchButton
             // 
@@ -199,7 +202,7 @@
             Controls.Add(label1);
             Controls.Add(ProductSearchButton);
             Controls.Add(PartsSearchButton);
-            Controls.Add(dataGridView1);
+            Controls.Add(prodDataGrid);
             Controls.Add(partsDataGrid);
             Controls.Add(ProdDeleteButton);
             Controls.Add(ProdModifyButton);
@@ -212,7 +215,7 @@
             Text = "Inventory Application";
             Load += Form1_Load;
             ((System.ComponentModel.ISupportInitialize)partsDataGrid).EndInit();
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)prodDataGrid).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -227,7 +230,7 @@
         private Button ProdModifyButton;
         private Button ProdAddButton;
         private DataGridView partsDataGrid;
-        private DataGridView dataGridView1;
+        private DataGridView prodDataGrid;
         private Button ProductSearchButton;
         private Button PartsSearchButton;
         private Label label1;

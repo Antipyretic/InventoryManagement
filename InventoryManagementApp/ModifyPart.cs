@@ -8,14 +8,14 @@ using System.Windows.Forms;
 
 namespace InventoryManagementApp
 {
-    public partial class AddPartForm : Form
+    public partial class ModifyPart : Form
     {
-        public AddPartForm()
+        public ModifyPart()
         {
             InitializeComponent();
         }
 
-        private void AddPartForm_Load(object sender, EventArgs e)
+        private void AddPartMaxLabel_Click(object sender, EventArgs e)
         {
 
         }
@@ -25,12 +25,7 @@ namespace InventoryManagementApp
 
         }
 
-        private void AddPartMaxLabel_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void AddPartInvLabel_Click(object sender, EventArgs e)
+        private void ModifyPart_Load(object sender, EventArgs e)
         {
 
         }
