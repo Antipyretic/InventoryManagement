@@ -367,7 +367,7 @@
             Controls.Add(ModProdSaveButton);
             Controls.Add(ModProdAddButton);
             Controls.Add(ModProdCancelButton);
-            Name = "ModifyProduct";
+            //Name = "ModifyProduct";
             Text = "ModifyProduct";
             ((System.ComponentModel.ISupportInitialize)ModAssPartGridView).EndInit();
             ((System.ComponentModel.ISupportInitialize)AllModPartsGridView).EndInit();

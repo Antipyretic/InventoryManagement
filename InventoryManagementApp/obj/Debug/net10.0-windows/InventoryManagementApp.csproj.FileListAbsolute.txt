@@ -18,3 +18,5 @@ C:\Users\papa bigtime\Builds\InventoryManagement\InventoryManagementApp\obj\Debu
 C:\Users\papa bigtime\Builds\InventoryManagement\InventoryManagementApp\obj\Debug\net10.0-windows\ref\InventoryManagementApp.dll
 C:\Users\papa bigtime\Builds\InventoryManagement\InventoryManagementApp\obj\Debug\net10.0-windows\Inventor.FF12EBF4.Up2Date
 C:\Users\papa bigtime\Builds\InventoryManagement\InventoryManagementApp\obj\Debug\net10.0-windows\InventoryManagementApp.ModifyPart.resources
+C:\Users\papa bigtime\Builds\InventoryManagement\InventoryManagementApp\obj\Debug\net10.0-windows\InventoryManagementApp.AddProduct.resources
+C:\Users\papa bigtime\Builds\InventoryManagement\InventoryManagementApp\obj\Debug\net10.0-windows\InventoryManagementApp.ModifyProduct.resources

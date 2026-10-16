@@ -35,12 +35,12 @@
             ModPartInvLabel = new Label();
             ModPartNameLabel = new Label();
             ModPartIDLabel = new Label();
-            textBox7 = new TextBox();
-            textBox6 = new TextBox();
+            ModPartMaxTextbox = new TextBox();
+            ModPriceTextBox = new TextBox();
             InvLabelTextBox = new TextBox();
             ModNameTextBox = new TextBox();
-            textBox3 = new TextBox();
-            textBox2 = new TextBox();
+            ModPartMinTextbox = new TextBox();
+            ModPartCompTextbox = new TextBox();
             ModIDTextBox = new TextBox();
             AddPartCancelButton = new Button();
             AddPartSaveButton = new Button();
@@ -52,11 +52,11 @@
             // AddPartComLabel
             // 
             AddPartComLabel.AutoSize = true;
-            AddPartComLabel.Location = new Point(-6, 324);
+            AddPartComLabel.Location = new Point(86, 329);
             AddPartComLabel.Name = "AddPartComLabel";
-            AddPartComLabel.Size = new Size(165, 15);
+            AddPartComLabel.Size = new Size(37, 15);
             AddPartComLabel.TabIndex = 35;
-            AddPartComLabel.Text = "Company Name/ Machine ID:";
+            AddPartComLabel.Text = "select";
             AddPartComLabel.Click += AddPartComLabel_Click;
             // 
             // ModPartMaxLabel
@@ -114,19 +114,21 @@
             ModPartIDLabel.TabIndex = 29;
             ModPartIDLabel.Text = "ID:";
             // 
-            // textBox7
+            // ModPartMaxTextbox
             // 
-            textBox7.Location = new Point(289, 272);
-            textBox7.Name = "textBox7";
-            textBox7.Size = new Size(65, 23);
-            textBox7.TabIndex = 28;
+            ModPartMaxTextbox.Location = new Point(289, 272);
+            ModPartMaxTextbox.Name = "ModPartMaxTextbox";
+            ModPartMaxTextbox.Size = new Size(65, 23);
+            ModPartMaxTextbox.TabIndex = 28;
+            ModPartMaxTextbox.TextChanged += textBox7_TextChanged;
             // 
-            // textBox6
+            // ModPriceTextBox
             // 
-            textBox6.Location = new Point(165, 222);
-            textBox6.Name = "textBox6";
-            textBox6.Size = new Size(189, 23);
-            textBox6.TabIndex = 27;
+            ModPriceTextBox.Location = new Point(165, 222);
+            ModPriceTextBox.Name = "ModPriceTextBox";
+            ModPriceTextBox.Size = new Size(189, 23);
+            ModPriceTextBox.TabIndex = 27;
+            ModPriceTextBox.TextChanged += textBox6_TextChanged;
             // 
             // InvLabelTextBox
             // 
@@ -134,6 +136,7 @@
             InvLabelTextBox.Name = "InvLabelTextBox";
             InvLabelTextBox.Size = new Size(189, 23);
             InvLabelTextBox.TabIndex = 26;
+            InvLabelTextBox.TextChanged += InvLabelTextBox_TextChanged;
             // 
             // ModNameTextBox
             // 
@@ -141,20 +144,23 @@
             ModNameTextBox.Name = "ModNameTextBox";
             ModNameTextBox.Size = new Size(189, 23);
             ModNameTextBox.TabIndex = 25;
+            ModNameTextBox.TextChanged += ModNameTextBox_TextChanged;
             // 
-            // textBox3
+            // ModPartMinTextbox
             // 
-            textBox3.Location = new Point(165, 272);
-            textBox3.Name = "textBox3";
-            textBox3.Size = new Size(68, 23);
-            textBox3.TabIndex = 24;
+            ModPartMinTextbox.Location = new Point(165, 272);
+            ModPartMinTextbox.Name = "ModPartMinTextbox";
+            ModPartMinTextbox.Size = new Size(68, 23);
+            ModPartMinTextbox.TabIndex = 24;
+            ModPartMinTextbox.TextChanged += textBox3_TextChanged;
             // 
-            // textBox2
+            // ModPartCompTextbox
             // 
-            textBox2.Location = new Point(165, 321);
-            textBox2.Name = "textBox2";
-            textBox2.Size = new Size(189, 23);
-            textBox2.TabIndex = 23;
+            ModPartCompTextbox.Location = new Point(165, 321);
+            ModPartCompTextbox.Name = "ModPartCompTextbox";
+            ModPartCompTextbox.Size = new Size(189, 23);
+            ModPartCompTextbox.TabIndex = 23;
+            ModPartCompTextbox.TextChanged += textBox2_TextChanged;
             // 
             // ModIDTextBox
             // 
@@ -162,6 +168,7 @@
             ModIDTextBox.Name = "ModIDTextBox";
             ModIDTextBox.Size = new Size(189, 23);
             ModIDTextBox.TabIndex = 22;
+            ModIDTextBox.TextChanged += ModIDTextBox_TextChanged;
             // 
             // AddPartCancelButton
             // 
@@ -171,6 +178,7 @@
             AddPartCancelButton.TabIndex = 21;
             AddPartCancelButton.Text = "Cancel";
             AddPartCancelButton.UseVisualStyleBackColor = true;
+            AddPartCancelButton.Click += AddPartCancelButton_Click;
             // 
             // AddPartSaveButton
             // 
@@ -180,6 +188,7 @@
             AddPartSaveButton.TabIndex = 20;
             AddPartSaveButton.Text = "Save";
             AddPartSaveButton.UseVisualStyleBackColor = true;
+            AddPartSaveButton.Click += ModPartSaveButton_Click;
             // 
             // ModpartOutsourcedRadioButton
             // 
@@ -191,6 +200,7 @@
             ModpartOutsourcedRadioButton.TabStop = true;
             ModpartOutsourcedRadioButton.Text = "Outsourced";
             ModpartOutsourcedRadioButton.UseVisualStyleBackColor = true;
+            ModpartOutsourcedRadioButton.CheckedChanged += ModpartOutsourcedRadioButton_CheckedChanged;
             // 
             // ModInhouseRadioButton
             // 
@@ -202,6 +212,7 @@
             ModInhouseRadioButton.TabStop = true;
             ModInhouseRadioButton.Text = "In-House";
             ModInhouseRadioButton.UseVisualStyleBackColor = true;
+            ModInhouseRadioButton.CheckedChanged += ModInhouseRadioButton_CheckedChanged;
             // 
             // label1
             // 
@@ -226,12 +237,12 @@
             Controls.Add(ModPartInvLabel);
             Controls.Add(ModPartNameLabel);
             Controls.Add(ModPartIDLabel);
-            Controls.Add(textBox7);
-            Controls.Add(textBox6);
+            Controls.Add(ModPartMaxTextbox);
+            Controls.Add(ModPriceTextBox);
             Controls.Add(InvLabelTextBox);
             Controls.Add(ModNameTextBox);
-            Controls.Add(textBox3);
-            Controls.Add(textBox2);
+            Controls.Add(ModPartMinTextbox);
+            Controls.Add(ModPartCompTextbox);
             Controls.Add(ModIDTextBox);
             Controls.Add(AddPartCancelButton);
             Controls.Add(AddPartSaveButton);
@@ -245,25 +256,24 @@
         }
 
         #endregion
-
-        private Label AddPartComLabel;
         private Label ModPartMaxLabel;
         private Label ModPartMinLabel;
         private Label ModPartPriceLabel;
         private Label ModPartInvLabel;
         private Label ModPartNameLabel;
         private Label ModPartIDLabel;
-        private TextBox textBox7;
-        private TextBox textBox6;
-        private TextBox InvLabelTextBox;
-        private TextBox ModNameTextBox;
-        private TextBox textBox3;
-        private TextBox textBox2;
-        private TextBox ModIDTextBox;
         private Button AddPartCancelButton;
         private Button AddPartSaveButton;
         private RadioButton ModpartOutsourcedRadioButton;
         private RadioButton ModInhouseRadioButton;
         private Label label1;
+        public Label AddPartComLabel;
+        public TextBox ModPartMaxTextbox;
+        public TextBox ModPriceTextBox;
+        public TextBox InvLabelTextBox;
+        public TextBox ModNameTextBox;
+        public TextBox ModPartMinTextbox;
+        public TextBox ModPartCompTextbox;
+        public TextBox ModIDTextBox;
     }
 }

@@ -28,17 +28,18 @@
         /// </summary>
         private void InitializeComponent()
         {
+            components = new System.ComponentModel.Container();
             InhouseRadioButton = new RadioButton();
             OutsourcedRadioButton = new RadioButton();
             AddPartSaveButton = new Button();
             AddPartCancelButton = new Button();
-            textBox1 = new TextBox();
-            textBox2 = new TextBox();
-            textBox3 = new TextBox();
-            textBox4 = new TextBox();
-            textBox5 = new TextBox();
-            textBox6 = new TextBox();
-            textBox7 = new TextBox();
+            AddPartIdTextBox = new TextBox();
+            AddPartCompTextBox = new TextBox();
+            AddPartMinTextBox = new TextBox();
+            AddPartNameTextBox = new TextBox();
+            AddPartInvTextBox = new TextBox();
+            AddPartPriceTextBox = new TextBox();
+            AddPartMaxTextBox = new TextBox();
             AddPartIDLabel = new Label();
             AddPartNameLabel = new Label();
             AddPartInvLabel = new Label();
@@ -47,6 +48,8 @@
             AddPartMaxLabel = new Label();
             AddPartComLabel = new Label();
             label1 = new Label();
+            errorProvider1 = new ErrorProvider(components);
+            ((System.ComponentModel.ISupportInitialize)errorProvider1).BeginInit();
             SuspendLayout();
             // 
             // InhouseRadioButton
@@ -59,6 +62,7 @@
             InhouseRadioButton.TabStop = true;
             InhouseRadioButton.Text = "In-House";
             InhouseRadioButton.UseVisualStyleBackColor = true;
+            InhouseRadioButton.CheckedChanged += InhouseRadioButton_CheckedChanged;
             // 
             // OutsourcedRadioButton
             // 
@@ -79,6 +83,7 @@
             AddPartSaveButton.TabIndex = 2;
             AddPartSaveButton.Text = "Save";
             AddPartSaveButton.UseVisualStyleBackColor = true;
+            AddPartSaveButton.Click += AddPartSaveButton_Click;
             // 
             // AddPartCancelButton
             // 
@@ -88,55 +93,63 @@
             AddPartCancelButton.TabIndex = 3;
             AddPartCancelButton.Text = "Cancel";
             AddPartCancelButton.UseVisualStyleBackColor = true;
+            AddPartCancelButton.Click += AddPartCancelButton_Click;
             // 
-            // textBox1
+            // AddPartIdTextBox
             // 
-            textBox1.Location = new Point(150, 78);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(189, 23);
-            textBox1.TabIndex = 4;
+            AddPartIdTextBox.Location = new Point(150, 78);
+            AddPartIdTextBox.Name = "AddPartIdTextBox";
+            AddPartIdTextBox.Size = new Size(189, 23);
+            AddPartIdTextBox.TabIndex = 4;
+            AddPartIdTextBox.TextChanged += AddPartIdTextBox_TextChanged;
             // 
-            // textBox2
+            // AddPartCompTextBox
             // 
-            textBox2.Location = new Point(150, 332);
-            textBox2.Name = "textBox2";
-            textBox2.Size = new Size(189, 23);
-            textBox2.TabIndex = 5;
+            AddPartCompTextBox.Location = new Point(150, 332);
+            AddPartCompTextBox.Name = "AddPartCompTextBox";
+            AddPartCompTextBox.Size = new Size(189, 23);
+            AddPartCompTextBox.TabIndex = 5;
             // 
-            // textBox3
+            // AddPartMinTextBox
             // 
-            textBox3.Location = new Point(150, 282);
-            textBox3.Name = "textBox3";
-            textBox3.Size = new Size(68, 23);
-            textBox3.TabIndex = 6;
+            AddPartMinTextBox.Location = new Point(150, 282);
+            AddPartMinTextBox.Name = "AddPartMinTextBox";
+            AddPartMinTextBox.Size = new Size(68, 23);
+            AddPartMinTextBox.TabIndex = 6;
+            AddPartMinTextBox.TextChanged += AddPartMinTextBox_TextChanged;
             // 
-            // textBox4
+            // AddPartNameTextBox
             // 
-            textBox4.Location = new Point(150, 130);
-            textBox4.Name = "textBox4";
-            textBox4.Size = new Size(189, 23);
-            textBox4.TabIndex = 7;
+            AddPartNameTextBox.Location = new Point(150, 130);
+            AddPartNameTextBox.Name = "AddPartNameTextBox";
+            AddPartNameTextBox.Size = new Size(189, 23);
+            AddPartNameTextBox.TabIndex = 7;
+            AddPartNameTextBox.Validating += AddPartNameTextBox_Validating;
             // 
-            // textBox5
+            // AddPartInvTextBox
             // 
-            textBox5.Location = new Point(150, 185);
-            textBox5.Name = "textBox5";
-            textBox5.Size = new Size(189, 23);
-            textBox5.TabIndex = 8;
+            AddPartInvTextBox.Location = new Point(150, 185);
+            AddPartInvTextBox.Name = "AddPartInvTextBox";
+            AddPartInvTextBox.Size = new Size(189, 23);
+            AddPartInvTextBox.TabIndex = 8;
+            AddPartInvTextBox.TextChanged += AddPartInvTextBox_TextChanged;
+            AddPartInvTextBox.Validating += AddPartInvTextBox_Validating;
             // 
-            // textBox6
+            // AddPartPriceTextBox
             // 
-            textBox6.Location = new Point(150, 234);
-            textBox6.Name = "textBox6";
-            textBox6.Size = new Size(189, 23);
-            textBox6.TabIndex = 9;
+            AddPartPriceTextBox.Location = new Point(150, 234);
+            AddPartPriceTextBox.Name = "AddPartPriceTextBox";
+            AddPartPriceTextBox.Size = new Size(189, 23);
+            AddPartPriceTextBox.TabIndex = 9;
+            AddPartPriceTextBox.Validating += AddPartPriceTextBox_Validating;
             // 
-            // textBox7
+            // AddPartMaxTextBox
             // 
-            textBox7.Location = new Point(266, 282);
-            textBox7.Name = "textBox7";
-            textBox7.Size = new Size(73, 23);
-            textBox7.TabIndex = 10;
+            AddPartMaxTextBox.Location = new Point(266, 282);
+            AddPartMaxTextBox.Name = "AddPartMaxTextBox";
+            AddPartMaxTextBox.Size = new Size(73, 23);
+            AddPartMaxTextBox.TabIndex = 10;
+            AddPartMaxTextBox.TextChanged += AddPartMaxTextBox_TextChanged;
             // 
             // AddPartIDLabel
             // 
@@ -159,11 +172,11 @@
             // AddPartInvLabel
             // 
             AddPartInvLabel.AutoSize = true;
-            AddPartInvLabel.Location = new Point(53, 188);
+            AddPartInvLabel.Location = new Point(84, 188);
             AddPartInvLabel.Name = "AddPartInvLabel";
-            AddPartInvLabel.Size = new Size(91, 15);
+            AddPartInvLabel.Size = new Size(60, 15);
             AddPartInvLabel.TabIndex = 13;
-            AddPartInvLabel.Text = "Inventory Label:";
+            AddPartInvLabel.Text = "Inventory:";
             AddPartInvLabel.Click += AddPartInvLabel_Click;
             // 
             // AddPartPriceLabel
@@ -197,11 +210,11 @@
             // AddPartComLabel
             // 
             AddPartComLabel.AutoSize = true;
-            AddPartComLabel.Location = new Point(-21, 335);
+            AddPartComLabel.Location = new Point(53, 335);
             AddPartComLabel.Name = "AddPartComLabel";
-            AddPartComLabel.Size = new Size(165, 15);
+            AddPartComLabel.Size = new Size(37, 15);
             AddPartComLabel.TabIndex = 17;
-            AddPartComLabel.Text = "Company Name/ Machine ID:";
+            AddPartComLabel.Text = "select";
             AddPartComLabel.Click += AddPartComLabel_Click;
             // 
             // label1
@@ -213,6 +226,10 @@
             label1.Size = new Size(55, 15);
             label1.TabIndex = 18;
             label1.Text = "Add Part";
+            // 
+            // errorProvider1
+            // 
+            errorProvider1.ContainerControl = this;
             // 
             // AddPartForm
             // 
@@ -227,13 +244,13 @@
             Controls.Add(AddPartInvLabel);
             Controls.Add(AddPartNameLabel);
             Controls.Add(AddPartIDLabel);
-            Controls.Add(textBox7);
-            Controls.Add(textBox6);
-            Controls.Add(textBox5);
-            Controls.Add(textBox4);
-            Controls.Add(textBox3);
-            Controls.Add(textBox2);
-            Controls.Add(textBox1);
+            Controls.Add(AddPartMaxTextBox);
+            Controls.Add(AddPartPriceTextBox);
+            Controls.Add(AddPartInvTextBox);
+            Controls.Add(AddPartNameTextBox);
+            Controls.Add(AddPartMinTextBox);
+            Controls.Add(AddPartCompTextBox);
+            Controls.Add(AddPartIdTextBox);
             Controls.Add(AddPartCancelButton);
             Controls.Add(AddPartSaveButton);
             Controls.Add(OutsourcedRadioButton);
@@ -241,6 +258,7 @@
             Name = "AddPartForm";
             Text = " Add Part";
             Load += AddPartForm_Load;
+            ((System.ComponentModel.ISupportInitialize)errorProvider1).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -251,13 +269,13 @@
         private RadioButton OutsourcedRadioButton;
         private Button AddPartSaveButton;
         private Button AddPartCancelButton;
-        private TextBox textBox1;
-        private TextBox textBox2;
-        private TextBox textBox3;
-        private TextBox textBox4;
-        private TextBox textBox5;
-        private TextBox textBox6;
-        private TextBox textBox7;
+        private TextBox AddPartIdTextBox;
+        private TextBox AddPartCompTextBox;
+        private TextBox AddPartMinTextBox;
+        private TextBox AddPartNameTextBox;
+        private TextBox AddPartInvTextBox;
+        private TextBox AddPartPriceTextBox;
+        private TextBox AddPartMaxTextBox;
         private Label AddPartIDLabel;
         private Label AddPartNameLabel;
         private Label AddPartInvLabel;
@@ -266,5 +284,6 @@
         private Label AddPartMaxLabel;
         private Label AddPartComLabel;
         private Label label1;
+        private ErrorProvider errorProvider1;
     }
 }

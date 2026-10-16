@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            components = new System.ComponentModel.Container();
             PartAddButton = new Button();
             PartModifyButton = new Button();
             PartDeleteButton = new Button();
@@ -36,6 +37,7 @@
             ProdModifyButton = new Button();
             ProdAddButton = new Button();
             partsDataGrid = new DataGridView();
+            partBindingSource = new BindingSource(components);
             prodDataGrid = new DataGridView();
             ProductSearchButton = new Button();
             PartsSearchButton = new Button();
@@ -45,6 +47,7 @@
             PartsTextbox = new TextBox();
             ProdTextbox = new TextBox();
             ((System.ComponentModel.ISupportInitialize)partsDataGrid).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)partBindingSource).BeginInit();
             ((System.ComponentModel.ISupportInitialize)prodDataGrid).BeginInit();
             SuspendLayout();
             // 
@@ -76,6 +79,7 @@
             PartDeleteButton.TabIndex = 2;
             PartDeleteButton.Text = "Delete";
             PartDeleteButton.UseVisualStyleBackColor = true;
+            PartDeleteButton.Click += PartDeleteButton_Click;
             // 
             // Exit
             // 
@@ -85,6 +89,7 @@
             Exit.TabIndex = 4;
             Exit.Text = "Exit";
             Exit.UseVisualStyleBackColor = true;
+            Exit.Click += Exit_Click;
             // 
             // ProdDeleteButton
             // 
@@ -94,6 +99,7 @@
             ProdDeleteButton.TabIndex = 7;
             ProdDeleteButton.Text = "Delete";
             ProdDeleteButton.UseVisualStyleBackColor = true;
+            ProdDeleteButton.Click += ProdDeleteButton_Click;
             // 
             // ProdModifyButton
             // 
@@ -112,6 +118,7 @@
             ProdAddButton.TabIndex = 5;
             ProdAddButton.Text = "Add";
             ProdAddButton.UseVisualStyleBackColor = true;
+            ProdAddButton.Click += ProdAddButton_Click;
             // 
             // partsDataGrid
             // 
@@ -121,6 +128,10 @@
             partsDataGrid.Size = new Size(560, 220);
             partsDataGrid.TabIndex = 8;
             partsDataGrid.CellContentClick += partsDataGrid_CellContentClick;
+            // 
+            // partBindingSource
+            // 
+            partBindingSource.DataSource = typeof(Part);
             // 
             // prodDataGrid
             // 
@@ -147,6 +158,7 @@
             PartsSearchButton.TabIndex = 10;
             PartsSearchButton.Text = "Search";
             PartsSearchButton.UseVisualStyleBackColor = true;
+            PartsSearchButton.Click += PartsSearchButton_Click;
             // 
             // label1
             // 
@@ -182,6 +194,7 @@
             PartsTextbox.Name = "PartsTextbox";
             PartsTextbox.Size = new Size(201, 23);
             PartsTextbox.TabIndex = 15;
+            PartsTextbox.TextChanged += PartsTextbox_TextChanged;
             // 
             // ProdTextbox
             // 
@@ -215,6 +228,7 @@
             Text = "Inventory Application";
             Load += Form1_Load;
             ((System.ComponentModel.ISupportInitialize)partsDataGrid).EndInit();
+            ((System.ComponentModel.ISupportInitialize)partBindingSource).EndInit();
             ((System.ComponentModel.ISupportInitialize)prodDataGrid).EndInit();
             ResumeLayout(false);
             PerformLayout();
@@ -229,7 +243,6 @@
         private Button ProdDeleteButton;
         private Button ProdModifyButton;
         private Button ProdAddButton;
-        private DataGridView partsDataGrid;
         private DataGridView prodDataGrid;
         private Button ProductSearchButton;
         private Button PartsSearchButton;
@@ -238,5 +251,7 @@
         private Label label3;
         private TextBox PartsTextbox;
         private TextBox ProdTextbox;
+        private BindingSource partBindingSource;
+        public DataGridView partsDataGrid;
     }
 }

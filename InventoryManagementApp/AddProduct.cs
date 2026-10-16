@@ -14,11 +14,9 @@ namespace InventoryManagementApp
         {
             InitializeComponent();
         }
-        DataTable dataTable = new DataTable();
         private void AddProduct_Load(object sender, EventArgs e)
         {
-            dataTable.Columns["Part ID"].AutoIncrement = true;
-            dataTable.Columns["Part ID"].AutoIncrementSeed = 1;
+            
         }
 
         private void AllPartsGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
