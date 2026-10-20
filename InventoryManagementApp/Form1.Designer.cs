@@ -243,7 +243,6 @@
         private Button ProdDeleteButton;
         private Button ProdModifyButton;
         private Button ProdAddButton;
-        private DataGridView prodDataGrid;
         private Button ProductSearchButton;
         private Button PartsSearchButton;
         private Label label1;
@@ -253,5 +252,6 @@
         private TextBox ProdTextbox;
         private BindingSource partBindingSource;
         public DataGridView partsDataGrid;
+        public DataGridView prodDataGrid;
     }
 }

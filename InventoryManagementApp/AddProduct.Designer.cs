@@ -44,26 +44,14 @@
             AddProdNameTextBox = new TextBox();
             AddProdMinTextBox = new TextBox();
             AddProdIdTextBox = new TextBox();
-            AllPartsGridView = new DataGridView();
+            AllPartsDataGrid = new DataGridView();
             AddProdSearchBox = new TextBox();
             AssPartGridView = new DataGridView();
-            dataGridViewTextBoxColumn1 = new DataGridViewTextBoxColumn();
-            dataGridViewTextBoxColumn2 = new DataGridViewTextBoxColumn();
-            dataGridViewTextBoxColumn3 = new DataGridViewTextBoxColumn();
-            dataGridViewTextBoxColumn4 = new DataGridViewTextBoxColumn();
-            dataGridViewTextBoxColumn5 = new DataGridViewTextBoxColumn();
-            dataGridViewTextBoxColumn6 = new DataGridViewTextBoxColumn();
             AllPartsGridLabel = new Label();
             AssPartGridLabel = new Label();
             AddProdFormLabel = new Label();
             AllProdSearchButton = new Button();
-            PartID = new DataGridViewTextBoxColumn();
-            Name = new DataGridViewTextBoxColumn();
-            Inventory = new DataGridViewTextBoxColumn();
-            Price = new DataGridViewTextBoxColumn();
-            Min = new DataGridViewTextBoxColumn();
-            Max = new DataGridViewTextBoxColumn();
-            ((System.ComponentModel.ISupportInitialize)AllPartsGridView).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)AllPartsDataGrid).BeginInit();
             ((System.ComponentModel.ISupportInitialize)AssPartGridView).BeginInit();
             SuspendLayout();
             // 
@@ -84,6 +72,7 @@
             AddProdSaveButton.TabIndex = 10;
             AddProdSaveButton.Text = "Save";
             AddProdSaveButton.UseVisualStyleBackColor = true;
+            AddProdSaveButton.Click += AddProdSaveButton_Click;
             // 
             // ProdAddButton
             // 
@@ -93,6 +82,7 @@
             ProdAddButton.TabIndex = 9;
             ProdAddButton.Text = "Add";
             ProdAddButton.UseVisualStyleBackColor = true;
+            ProdAddButton.Click += ProdAddButton_Click;
             // 
             // AddProdCancelButton
             // 
@@ -102,6 +92,7 @@
             AddProdCancelButton.TabIndex = 8;
             AddProdCancelButton.Text = "Cancel";
             AddProdCancelButton.UseVisualStyleBackColor = true;
+            AddProdCancelButton.Click += AddProdCancelButton_Click;
             // 
             // AddPartMaxLabel
             // 
@@ -135,9 +126,10 @@
             AddProdInvLabel.AutoSize = true;
             AddProdInvLabel.Location = new Point(25, 273);
             AddProdInvLabel.Name = "AddProdInvLabel";
-            AddProdInvLabel.Size = new Size(91, 15);
+            AddProdInvLabel.Size = new Size(60, 15);
             AddProdInvLabel.TabIndex = 25;
-            AddProdInvLabel.Text = "Inventory Label:";
+            AddProdInvLabel.Text = "Inventory:";
+            AddProdInvLabel.Click += AddProdInvLabel_Click;
             // 
             // AddProdNameLabel
             // 
@@ -170,6 +162,7 @@
             AddProdPriceTextBox.Name = "AddProdPriceTextBox";
             AddProdPriceTextBox.Size = new Size(189, 23);
             AddProdPriceTextBox.TabIndex = 21;
+            AddProdPriceTextBox.TextChanged += AddProdPriceTextBox_TextChanged;
             // 
             // AddProdInvTextBox
             // 
@@ -177,6 +170,7 @@
             AddProdInvTextBox.Name = "AddProdInvTextBox";
             AddProdInvTextBox.Size = new Size(189, 23);
             AddProdInvTextBox.TabIndex = 20;
+            AddProdInvTextBox.TextChanged += AddProdInvTextBox_TextChanged;
             // 
             // AddProdNameTextBox
             // 
@@ -184,6 +178,7 @@
             AddProdNameTextBox.Name = "AddProdNameTextBox";
             AddProdNameTextBox.Size = new Size(189, 23);
             AddProdNameTextBox.TabIndex = 19;
+            AddProdNameTextBox.TextChanged += AddProdNameTextBox_TextChanged;
             // 
             // AddProdMinTextBox
             // 
@@ -191,6 +186,7 @@
             AddProdMinTextBox.Name = "AddProdMinTextBox";
             AddProdMinTextBox.Size = new Size(189, 23);
             AddProdMinTextBox.TabIndex = 18;
+            AddProdMinTextBox.TextChanged += AddProdMinTextBox_TextChanged;
             // 
             // AddProdIdTextBox
             // 
@@ -198,16 +194,16 @@
             AddProdIdTextBox.Name = "AddProdIdTextBox";
             AddProdIdTextBox.Size = new Size(189, 23);
             AddProdIdTextBox.TabIndex = 17;
+            AddProdIdTextBox.TextChanged += AddProdIdTextBox_TextChanged;
             // 
-            // AllPartsGridView
+            // AllPartsDataGrid
             // 
-            AllPartsGridView.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            AllPartsGridView.Columns.AddRange(new DataGridViewColumn[] { PartID, Name, Inventory, Price, Min, Max });
-            AllPartsGridView.Location = new Point(252, 89);
-            AllPartsGridView.Name = "AllPartsGridView";
-            AllPartsGridView.Size = new Size(573, 262);
-            AllPartsGridView.TabIndex = 29;
-            AllPartsGridView.CellContentClick += AllPartsGridView_CellContentClick;
+            AllPartsDataGrid.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            AllPartsDataGrid.Location = new Point(252, 89);
+            AllPartsDataGrid.Name = "AllPartsDataGrid";
+            AllPartsDataGrid.Size = new Size(573, 262);
+            AllPartsDataGrid.TabIndex = 29;
+            AllPartsDataGrid.CellContentClick += AllPartsGridView_CellContentClick;
             // 
             // AddProdSearchBox
             // 
@@ -215,54 +211,15 @@
             AddProdSearchBox.Name = "AddProdSearchBox";
             AddProdSearchBox.Size = new Size(269, 23);
             AddProdSearchBox.TabIndex = 31;
+            AddProdSearchBox.TextChanged += AddProdSearchBox_TextChanged;
             // 
             // AssPartGridView
             // 
             AssPartGridView.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            AssPartGridView.Columns.AddRange(new DataGridViewColumn[] { dataGridViewTextBoxColumn1, dataGridViewTextBoxColumn2, dataGridViewTextBoxColumn3, dataGridViewTextBoxColumn4, dataGridViewTextBoxColumn5, dataGridViewTextBoxColumn6 });
             AssPartGridView.Location = new Point(252, 438);
             AssPartGridView.Name = "AssPartGridView";
             AssPartGridView.Size = new Size(573, 262);
             AssPartGridView.TabIndex = 33;
-            // 
-            // dataGridViewTextBoxColumn1
-            // 
-            dataGridViewTextBoxColumn1.Frozen = true;
-            dataGridViewTextBoxColumn1.HeaderText = "Part ID";
-            dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
-            // 
-            // dataGridViewTextBoxColumn2
-            // 
-            dataGridViewTextBoxColumn2.Frozen = true;
-            dataGridViewTextBoxColumn2.HeaderText = "Name";
-            dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
-            // 
-            // dataGridViewTextBoxColumn3
-            // 
-            dataGridViewTextBoxColumn3.Frozen = true;
-            dataGridViewTextBoxColumn3.HeaderText = "Inventory";
-            dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
-            dataGridViewTextBoxColumn3.Width = 75;
-            // 
-            // dataGridViewTextBoxColumn4
-            // 
-            dataGridViewTextBoxColumn4.Frozen = true;
-            dataGridViewTextBoxColumn4.HeaderText = "Price";
-            dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
-            // 
-            // dataGridViewTextBoxColumn5
-            // 
-            dataGridViewTextBoxColumn5.Frozen = true;
-            dataGridViewTextBoxColumn5.HeaderText = "Min";
-            dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
-            dataGridViewTextBoxColumn5.Width = 75;
-            // 
-            // dataGridViewTextBoxColumn6
-            // 
-            dataGridViewTextBoxColumn6.Frozen = true;
-            dataGridViewTextBoxColumn6.HeaderText = "Max";
-            dataGridViewTextBoxColumn6.Name = "dataGridViewTextBoxColumn6";
-            dataGridViewTextBoxColumn6.Width = 75;
             // 
             // AllPartsGridLabel
             // 
@@ -301,46 +258,7 @@
             AllProdSearchButton.TabIndex = 36;
             AllProdSearchButton.Text = "Search";
             AllProdSearchButton.UseVisualStyleBackColor = true;
-            // 
-            // PartID
-            // 
-            PartID.Frozen = true;
-            PartID.HeaderText = "Part ID";
-            PartID.Name = "PartID";
-            PartID.ReadOnly = true;
-            // 
-            // Name
-            // 
-            Name.Frozen = true;
-            Name.HeaderText = "Name";
-            Name.Name = "Name";
-            // 
-            // Inventory
-            // 
-            Inventory.Frozen = true;
-            Inventory.HeaderText = "Inventory";
-            Inventory.Name = "Inventory";
-            Inventory.Width = 75;
-            // 
-            // Price
-            // 
-            Price.Frozen = true;
-            Price.HeaderText = "Price";
-            Price.Name = "Price";
-            // 
-            // Min
-            // 
-            Min.Frozen = true;
-            Min.HeaderText = "Min";
-            Min.Name = "Min";
-            Min.Width = 75;
-            // 
-            // Max
-            // 
-            Max.Frozen = true;
-            Max.HeaderText = "Max";
-            Max.Name = "Max";
-            Max.Width = 75;
+            AllProdSearchButton.Click += AllProdSearchButton_Click;
             // 
             // AddProduct
             // 
@@ -353,7 +271,7 @@
             Controls.Add(AssPartGridView);
             Controls.Add(AllPartsGridLabel);
             Controls.Add(AddProdSearchBox);
-            Controls.Add(AllPartsGridView);
+            Controls.Add(AllPartsDataGrid);
             Controls.Add(AddPartMaxLabel);
             Controls.Add(AddPartMinLabel);
             Controls.Add(AddPartPriceLabel);
@@ -370,10 +288,10 @@
             Controls.Add(AddProdSaveButton);
             Controls.Add(ProdAddButton);
             Controls.Add(AddProdCancelButton);
-           // Name = "AddProduct";
+            Name = "AddProduct";
             Text = "AddProduct";
             Load += AddProduct_Load;
-            ((System.ComponentModel.ISupportInitialize)AllPartsGridView).EndInit();
+            ((System.ComponentModel.ISupportInitialize)AllPartsDataGrid).EndInit();
             ((System.ComponentModel.ISupportInitialize)AssPartGridView).EndInit();
             ResumeLayout(false);
             PerformLayout();
@@ -397,24 +315,12 @@
         private TextBox AddProdNameTextBox;
         private TextBox AddProdMinTextBox;
         private TextBox AddProdIdTextBox;
-        private DataGridView AllPartsGridView;
+        private DataGridView AllPartsDataGrid;
         private TextBox AddProdSearchBox;
         private DataGridView AssPartGridView;
-        private DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
-        private DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
-        private DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
-        private DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
-        private DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
-        private DataGridViewTextBoxColumn dataGridViewTextBoxColumn6;
         private Label AllPartsGridLabel;
         private Label AssPartGridLabel;
         private Label AddProdFormLabel;
         private Button AllProdSearchButton;
-        private DataGridViewTextBoxColumn PartID;
-        private DataGridViewTextBoxColumn Name;
-        private DataGridViewTextBoxColumn Inventory;
-        private DataGridViewTextBoxColumn Price;
-        private DataGridViewTextBoxColumn Min;
-        private DataGridViewTextBoxColumn Max;
     }
 }

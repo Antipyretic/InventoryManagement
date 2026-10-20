@@ -36,7 +36,14 @@ namespace InventoryManagementApp
 
         private void ModInhouseRadioButton_CheckedChanged(object sender, EventArgs e)
         {
-
+            if (ModInhouseRadioButton.Checked == true)
+            {
+                ModPartComLabel.Text = "Machine ID";
+            }
+            else
+            {
+                ModPartComLabel.Text = "Company name";
+            }
         }
 
         private void ModpartOutsourcedRadioButton_CheckedChanged(object sender, EventArgs e)
@@ -91,7 +98,7 @@ namespace InventoryManagementApp
                     {
                         PartId = int.Parse(ModIDTextBox.Text),
                         Name = ModNameTextBox.Text,
-                        Price = int.Parse(ModPriceTextBox.Text),
+                        Price = decimal.Parse(ModPriceTextBox.Text),
                         InStock = int.Parse(InvLabelTextBox.Text),
                         Min = int.Parse(ModPartMinTextbox.Text),
                         Max = int.Parse(ModPartMaxTextbox.Text),
@@ -105,7 +112,7 @@ namespace InventoryManagementApp
                     {
                         PartId = int.Parse(ModIDTextBox.Text),
                         Name = ModNameTextBox.Text,
-                        Price = int.Parse(ModPriceTextBox.Text),
+                        Price = decimal.Parse(ModPriceTextBox.Text),
                         InStock = int.Parse(InvLabelTextBox.Text),
                         Min = int.Parse(ModPartMinTextbox.Text),
                         Max = int.Parse(ModPartMaxTextbox.Text),

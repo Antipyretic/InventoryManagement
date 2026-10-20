@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            AddPartComLabel = new Label();
+            ModPartComLabel = new Label();
             ModPartMaxLabel = new Label();
             ModPartMinLabel = new Label();
             ModPartPriceLabel = new Label();
@@ -49,15 +49,14 @@
             label1 = new Label();
             SuspendLayout();
             // 
-            // AddPartComLabel
+            // ModPartComLabel
             // 
-            AddPartComLabel.AutoSize = true;
-            AddPartComLabel.Location = new Point(86, 329);
-            AddPartComLabel.Name = "AddPartComLabel";
-            AddPartComLabel.Size = new Size(37, 15);
-            AddPartComLabel.TabIndex = 35;
-            AddPartComLabel.Text = "select";
-            AddPartComLabel.Click += AddPartComLabel_Click;
+            ModPartComLabel.Location = new Point(88, 324);
+            ModPartComLabel.Name = "ModPartComLabel";
+            ModPartComLabel.Size = new Size(71, 15);
+            ModPartComLabel.TabIndex = 35;
+            ModPartComLabel.Text = "select";
+            ModPartComLabel.Click += AddPartComLabel_Click;
             // 
             // ModPartMaxLabel
             // 
@@ -230,7 +229,7 @@
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(493, 441);
             Controls.Add(label1);
-            Controls.Add(AddPartComLabel);
+            Controls.Add(ModPartComLabel);
             Controls.Add(ModPartMaxLabel);
             Controls.Add(ModPartMinLabel);
             Controls.Add(ModPartPriceLabel);
@@ -267,7 +266,7 @@
         private RadioButton ModpartOutsourcedRadioButton;
         private RadioButton ModInhouseRadioButton;
         private Label label1;
-        public Label AddPartComLabel;
+        public Label ModPartComLabel;
         public TextBox ModPartMaxTextbox;
         public TextBox ModPriceTextBox;
         public TextBox InvLabelTextBox;
