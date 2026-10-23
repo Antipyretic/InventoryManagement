@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            components = new System.ComponentModel.Container();
             ProdDeleteButton = new Button();
             AddProdSaveButton = new Button();
             ProdAddButton = new Button();
@@ -51,8 +52,10 @@
             AssPartGridLabel = new Label();
             AddProdFormLabel = new Label();
             AllProdSearchButton = new Button();
+            errorProviderProd = new ErrorProvider(components);
             ((System.ComponentModel.ISupportInitialize)AllPartsDataGrid).BeginInit();
             ((System.ComponentModel.ISupportInitialize)AssPartGridView).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)errorProviderProd).BeginInit();
             SuspendLayout();
             // 
             // ProdDeleteButton
@@ -63,6 +66,7 @@
             ProdDeleteButton.TabIndex = 11;
             ProdDeleteButton.Text = "Delete";
             ProdDeleteButton.UseVisualStyleBackColor = true;
+            ProdDeleteButton.Click += ProdDeleteButton_Click;
             // 
             // AddProdSaveButton
             // 
@@ -73,6 +77,7 @@
             AddProdSaveButton.Text = "Save";
             AddProdSaveButton.UseVisualStyleBackColor = true;
             AddProdSaveButton.Click += AddProdSaveButton_Click;
+            AddProdSaveButton.Validating += AddProdSaveButton_Validating;
             // 
             // ProdAddButton
             // 
@@ -163,6 +168,7 @@
             AddProdPriceTextBox.Size = new Size(189, 23);
             AddProdPriceTextBox.TabIndex = 21;
             AddProdPriceTextBox.TextChanged += AddProdPriceTextBox_TextChanged;
+            AddProdPriceTextBox.Validating += AddProdPriceTextBox_Validating;
             // 
             // AddProdInvTextBox
             // 
@@ -171,6 +177,7 @@
             AddProdInvTextBox.Size = new Size(189, 23);
             AddProdInvTextBox.TabIndex = 20;
             AddProdInvTextBox.TextChanged += AddProdInvTextBox_TextChanged;
+            AddProdInvTextBox.Validating += AddProdInvTextBox_Validating;
             // 
             // AddProdNameTextBox
             // 
@@ -195,6 +202,7 @@
             AddProdIdTextBox.Size = new Size(189, 23);
             AddProdIdTextBox.TabIndex = 17;
             AddProdIdTextBox.TextChanged += AddProdIdTextBox_TextChanged;
+            AddProdIdTextBox.Validating += AddProdIdTextBox_Validating;
             // 
             // AllPartsDataGrid
             // 
@@ -220,6 +228,7 @@
             AssPartGridView.Name = "AssPartGridView";
             AssPartGridView.Size = new Size(573, 262);
             AssPartGridView.TabIndex = 33;
+            AssPartGridView.CellContentClick += AssPartGridView_CellContentClick;
             // 
             // AllPartsGridLabel
             // 
@@ -260,6 +269,10 @@
             AllProdSearchButton.UseVisualStyleBackColor = true;
             AllProdSearchButton.Click += AllProdSearchButton_Click;
             // 
+            // errorProviderProd
+            // 
+            errorProviderProd.ContainerControl = this;
+            // 
             // AddProduct
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -293,6 +306,7 @@
             Load += AddProduct_Load;
             ((System.ComponentModel.ISupportInitialize)AllPartsDataGrid).EndInit();
             ((System.ComponentModel.ISupportInitialize)AssPartGridView).EndInit();
+            ((System.ComponentModel.ISupportInitialize)errorProviderProd).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -322,5 +336,6 @@
         private Label AssPartGridLabel;
         private Label AddProdFormLabel;
         private Button AllProdSearchButton;
+        private ErrorProvider errorProviderProd;
     }
 }

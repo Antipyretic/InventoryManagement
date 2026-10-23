@@ -149,6 +149,7 @@
             ProductSearchButton.TabIndex = 11;
             ProductSearchButton.Text = "Search";
             ProductSearchButton.UseVisualStyleBackColor = true;
+            ProductSearchButton.Click += ProductSearchButton_Click;
             // 
             // PartsSearchButton
             // 
@@ -202,6 +203,7 @@
             ProdTextbox.Name = "ProdTextbox";
             ProdTextbox.Size = new Size(201, 23);
             ProdTextbox.TabIndex = 16;
+            ProdTextbox.TextChanged += ProdTextbox_TextChanged;
             // 
             // Form1
             // 

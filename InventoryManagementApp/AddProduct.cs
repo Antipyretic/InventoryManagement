@@ -67,12 +67,18 @@ namespace InventoryManagementApp
 
         private void AddProdSearchBox_TextChanged(object sender, EventArgs e)
         {
+            if (string.IsNullOrEmpty(AddProdSearchBox.Text))
+            {
+                AllPartsDataGrid.DataSource = _form1.inventory.AllParts;
+            }
 
         }
 
         private void AllProdSearchButton_Click(object sender, EventArgs e)
         {
-
+            Inventory partSearch = new Inventory();
+            partSearch.AddPart(_form1.inventory.LookupPart(int.Parse(AddProdSearchBox.Text)));
+            AllPartsDataGrid.DataSource = partSearch;
         }
 
         private void AddProdSaveButton_Click(object sender, EventArgs e)
@@ -103,16 +109,36 @@ namespace InventoryManagementApp
 
         }
 
+        private void ProdDeleteButton_Click(object sender, EventArgs e)
+        {
+            if (AssPartGridView.CurrentRow.Cells.Count > 0)
+            {
+                int selectedPart = int.Parse(AssPartGridView.CurrentRow.Cells[0].Value.ToString());
+                foreach(Part part in pendAssPart.ToList())
+                {
+                    if(selectedPart == part.PartId)
+                    {
+                        pendAssPart.Remove(part);
+                    }
+                }
+               
+            }
+        }
+
         private void ProdAddButton_Click(object sender, EventArgs e)
         {
 
-
-
             if (AllPartsDataGrid.Rows.Count > 0)
             {
-                var selectedPart = int.Parse(AllPartsDataGrid.CurrentRow.Cells[0].Value.ToString());
-                var newPart = _form1.inventory.LookupPart(selectedPart);
-                pendAssPart.Add(newPart);
+                int selectedPart = int.Parse(AllPartsDataGrid.CurrentRow.Cells[0].Value.ToString());
+                
+                if(!DuplicateValidator(selectedPart))
+                {
+                    Part newPart = _form1.inventory.LookupPart(selectedPart);
+                    pendAssPart.Add(newPart);
+                }
+                
+                
             }
             else
             {
@@ -129,5 +155,79 @@ namespace InventoryManagementApp
         {
 
         }
+
+        private void AddProdInvTextBox_Validating(object sender, CancelEventArgs e)
+        {
+            if (!int.TryParse(AddProdInvTextBox.Text, out int inv))
+            {
+                e.Cancel = true;
+                AddProdInvTextBox.Focus();
+                errorProviderProd.SetError(AddProdInvTextBox, "Inventory must be a number.");
+            }
+
+        }
+
+        private void AddProdPriceTextBox_Validating(object sender, CancelEventArgs e)
+        {
+
+        }
+
+        private void AddProdSaveButton_Validating(object sender, CancelEventArgs e)
+        {
+
+
+            if (!decimal.TryParse(AddProdPriceTextBox.Text, out decimal price))
+            {
+                e.Cancel = true;
+                errorProviderProd.SetError(AddProdPriceTextBox, "Price must be a number.");
+            }
+
+            if (int.TryParse(AddProdMinTextBox.Text, out int min))
+            {
+                e.Cancel = true;
+                errorProviderProd.SetError(AddProdMinTextBox, "Min must be a number.");
+            }
+
+            if (int.TryParse(AddProdMaxTextBox.Text, out int max))
+            {
+                e.Cancel = true;
+                errorProviderProd.SetError(AddProdMaxTextBox, "Max must be a number.");
+            }
+
+
+
+        }
+
+        private void AddProdIdTextBox_Validating(object sender, CancelEventArgs e)
+        {
+            foreach (Product product in _form1.inventory.Products)
+            {
+                if (int.Parse(AddProdIdTextBox.Text) == product.ProductID)
+                {
+                    e.Cancel = true;
+                    errorProviderProd.SetError(AddProdIdTextBox, "A product with that ID already exists.");
+                }
+            }
+        }
+
+        private void AssPartGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private bool DuplicateValidator(int partID)
+        {
+            foreach (Part part in pendAssPart)
+            {
+                if (partID == part.PartId)
+                {
+                    MessageBox.Show("There is already and item with that ID associated with this part.");
+                    return true;
+                }
+                else return false;
+            }
+            return false;
+        }
+
     }
 }

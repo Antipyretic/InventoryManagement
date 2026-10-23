@@ -33,8 +33,21 @@ namespace InventoryManagementApp
 
         private void PartAddButton_Click(object sender, EventArgs e)
         {
-            AddPartForm addPart = new AddPartForm(this);
-            addPart.ShowDialog();
+            Part part = new Inhouse();
+            {
+                part.PartId = 1;
+                part.Price = 1;
+                part.Max = 10;
+                part.Min = 1;
+                part.InStock = 1;
+                part.Name = "partOne";
+            }
+
+             inventory.AddPart(part);
+
+
+            //AddPartForm addPart = new AddPartForm(this);
+            //addPart.ShowDialog();
 
         }
 
@@ -65,7 +78,7 @@ namespace InventoryManagementApp
         {
             this.Close();
         }
-        
+
         //Deletes the selected row of the parts data grid
         private void PartDeleteButton_Click(object sender, EventArgs e)
         {
@@ -109,7 +122,7 @@ namespace InventoryManagementApp
             {
                 MessageBox.Show(execpt.Message);
             }
-            
+
         }
         //Search through the list
         private void PartsSearchButton_Click(object sender, EventArgs e)
@@ -121,10 +134,30 @@ namespace InventoryManagementApp
         //Removes search condition if the search text box is empty
         private void PartsTextbox_TextChanged(object sender, EventArgs e)
         {
-            if(string.IsNullOrEmpty(PartsTextbox.Text))
+            if (string.IsNullOrEmpty(PartsTextbox.Text))
             {
                 partsDataGrid.DataSource = inventory.AllParts;
             }
+        }
+
+        private void ProductSearchButton_Click(object sender, EventArgs e)
+        {
+            Inventory searchInv = new Inventory();
+            Product searchProd = new Product();
+            searchProd = inventory.LookupProduct(int.Parse(ProdTextbox.Text));
+            searchInv.AddProduct(searchProd);
+            MessageBox.Show(searchProd.ProductID.ToString());
+            prodDataGrid.DataSource = searchInv.Products;
+        }
+
+        private void ProdTextbox_TextChanged(object sender, EventArgs e)
+        {
+
+            if (string.IsNullOrEmpty(ProdTextbox.Text))
+            {
+                prodDataGrid.DataSource = inventory.Products;
+            }
+
         }
     }
 
@@ -157,13 +190,13 @@ namespace InventoryManagementApp
 
         public void AddProduct(Product product)
         {
-            products.Add(product);
+            Products.Add(product);
 
         }
 
         public bool RemoveProduct(int id)
         {
-            foreach(Product prod in products)
+            foreach(Product prod in Products)
             {
                 if (id == prod.ProductID)
                 {
@@ -182,18 +215,14 @@ namespace InventoryManagementApp
         public Product? LookupProduct(int id)
         {
             
-            foreach (Product prod in products)
+            foreach (Product prod in Products)
             {
                 if(id == prod.ProductID)
                 {
                     return prod;
-                }
-
-                else { return null; }
+                } 
             }
-
             return null;
-
         }
 
         public void UpdateProduct(int id, Product product)
