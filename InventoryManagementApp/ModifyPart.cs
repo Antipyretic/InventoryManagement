@@ -17,6 +17,14 @@ namespace InventoryManagementApp
             InitializeComponent();
             ModIDTextBox.Enabled = false;
             _form1 = form1;
+            if (ModInhouseRadioButton.Checked == true)
+            {
+                ModPartComLabel.Text = "Machine ID";
+            }
+            else
+            {
+                ModPartComLabel.Text = "Company Name";
+            }
         }
 
         private void ModifyPart_Load(object sender, EventArgs e)
@@ -31,7 +39,7 @@ namespace InventoryManagementApp
 
         private void AddPartComLabel_Click(object sender, EventArgs e)
         {
-
+            
         }        
 
         private void ModInhouseRadioButton_CheckedChanged(object sender, EventArgs e)
@@ -128,7 +136,7 @@ namespace InventoryManagementApp
 
         private void AddPartCancelButton_Click(object sender, EventArgs e)
         {
-
+            this.Close();
         }
     }
 }

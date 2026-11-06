@@ -78,7 +78,7 @@ namespace InventoryManagementApp
         {
             Inventory partSearch = new Inventory();
             partSearch.AddPart(_form1.inventory.LookupPart(int.Parse(AddProdSearchBox.Text)));
-            AllPartsDataGrid.DataSource = partSearch;
+            AllPartsDataGrid.DataSource = partSearch.AllParts;
         }
 
         private void AddProdSaveButton_Click(object sender, EventArgs e)
@@ -103,26 +103,42 @@ namespace InventoryManagementApp
                 }
 
             }
+            if(prod.InStock > prod.Max || prod.InStock < prod.Min || prod.Min > prod.Max)
+            {
+                MessageBox.Show(AddProdInvTextBox, "Inventory is not a valid amout.");
+            }
+            else
+            {
+                _form1.inventory.AddProduct(prod);
+                this.Close();
+            }
 
-            _form1.inventory.AddProduct(prod);
-            this.Close();
+
 
         }
 
         private void ProdDeleteButton_Click(object sender, EventArgs e)
         {
-            if (AssPartGridView.CurrentRow.Cells.Count > 0)
+            try
             {
-                int selectedPart = int.Parse(AssPartGridView.CurrentRow.Cells[0].Value.ToString());
-                foreach(Part part in pendAssPart.ToList())
+                if (AssPartGridView.CurrentRow.Cells.Count > 0)
                 {
-                    if(selectedPart == part.PartId)
+                    int selectedPart = int.Parse(AssPartGridView.CurrentRow.Cells[0].Value.ToString());
+                    foreach (Part part in pendAssPart.ToList())
                     {
-                        pendAssPart.Remove(part);
+                        if (selectedPart == part.PartId)
+                        {
+                            pendAssPart.Remove(part);
+                        }
                     }
+
                 }
-               
             }
+            catch (Exception execpt)
+            {
+                MessageBox.Show("There are no associated parts to remove.");
+            }
+
         }
 
         private void ProdAddButton_Click(object sender, EventArgs e)
@@ -131,18 +147,18 @@ namespace InventoryManagementApp
             if (AllPartsDataGrid.Rows.Count > 0)
             {
                 int selectedPart = int.Parse(AllPartsDataGrid.CurrentRow.Cells[0].Value.ToString());
-                
-                if(!DuplicateValidator(selectedPart))
+
+                if (!DuplicateValidator(selectedPart))
                 {
                     Part newPart = _form1.inventory.LookupPart(selectedPart);
                     pendAssPart.Add(newPart);
                 }
-                
-                
+
+
             }
             else
             {
-                MessageBox.Show(_form1.inventory.AllParts.ToString());
+                MessageBox.Show("There are no parts selected.");
             }
         }
 
@@ -169,33 +185,62 @@ namespace InventoryManagementApp
 
         private void AddProdPriceTextBox_Validating(object sender, CancelEventArgs e)
         {
-
-        }
-
-        private void AddProdSaveButton_Validating(object sender, CancelEventArgs e)
-        {
-
-
             if (!decimal.TryParse(AddProdPriceTextBox.Text, out decimal price))
             {
                 e.Cancel = true;
                 errorProviderProd.SetError(AddProdPriceTextBox, "Price must be a number.");
             }
+        }
 
-            if (int.TryParse(AddProdMinTextBox.Text, out int min))
+        private void AddProdMinTextBox_Validating(object sender, CancelEventArgs e)
+        {
+            if (!int.TryParse(AddProdMinTextBox.Text, out int min))
             {
                 e.Cancel = true;
                 errorProviderProd.SetError(AddProdMinTextBox, "Min must be a number.");
             }
 
-            if (int.TryParse(AddProdMaxTextBox.Text, out int max))
+            //if(int.Parse(AddProdMinTextBox.Text.ToString()) > int.Parse(AddProdMaxTextBox.Text.ToString()))
+            //{
+            //    e.Cancel = true;
+            //    errorProviderProd.SetError(AddProdMinTextBox, "Min must be smaller than max.");
+            //}
+
+            //if(int.Parse(AddProdMinTextBox.Text.ToString()) > int.Parse(AddProdInvTextBox.Text.ToString()))
+            //{
+            //    e.Cancel = true;
+            //    errorProviderProd.SetError(AddProdMinTextBox, "Min must be smaller than the inventory quantity.");
+            //}
+        }
+
+        private void AddProdMaxTextBox_Validating(object sender, CancelEventArgs e)
+        {
+            if (!int.TryParse(AddProdMaxTextBox.Text, out int max))
             {
                 e.Cancel = true;
                 errorProviderProd.SetError(AddProdMaxTextBox, "Max must be a number.");
             }
 
+            if (int.Parse(AddProdMinTextBox.Text.ToString()) > int.Parse(AddProdMaxTextBox.Text.ToString()))
+            {
+                e.Cancel = true;
+                errorProviderProd.SetError(AddProdMinTextBox, "Min must be smaller than Max.");
+            }
 
+            if (int.Parse(AddProdMaxTextBox.Text.ToString()) > int.Parse(AddProdMaxTextBox.Text.ToString()))
+            {
+                e.Cancel = true;
+                errorProviderProd.SetError(AddProdMaxTextBox, "Max must be larger than inventory quantity.");
+            }
 
+        }
+
+        private void AddProdSaveButton_Validating(object sender, CancelEventArgs e)
+        {
+            if(int.Parse(AddProdMinTextBox.Text.ToString()) > int.Parse(AddProdInvTextBox.Text.ToString()))
+            {
+            }
+            
         }
 
         private void AddProdIdTextBox_Validating(object sender, CancelEventArgs e)
@@ -217,17 +262,17 @@ namespace InventoryManagementApp
 
         private bool DuplicateValidator(int partID)
         {
-            foreach (Part part in pendAssPart)
+            foreach (Part part in pendAssPart.ToList())
             {
                 if (partID == part.PartId)
                 {
                     MessageBox.Show("There is already and item with that ID associated with this part.");
                     return true;
                 }
-                else return false;
             }
             return false;
         }
 
+        
     }
 }

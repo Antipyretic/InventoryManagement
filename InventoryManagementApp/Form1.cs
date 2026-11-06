@@ -13,7 +13,8 @@ namespace InventoryManagementApp
             InitializeComponent();
             partsDataGrid.DataSource = inventory.AllParts;
             prodDataGrid.DataSource = inventory.Products;
-
+            partsDataGrid.DataBindingComplete += partsDataGrid_DataBindingComplete;
+            prodDataGrid.DataBindingComplete += partsDataGrid_DataBindingComplete;
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -21,49 +22,79 @@ namespace InventoryManagementApp
 
         }
 
-        private void label2_Click(object sender, EventArgs e)
+        private void partsDataGrid_DataBindingComplete(object sender, DataGridViewBindingCompleteEventArgs e)
         {
-
+            SetColumnHeaders();
         }
 
-        private void partsDataGrid_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        private void SetColumnHeaders()
+        {
+            if(partsDataGrid.Columns.Contains("Instock"))
+            {
+                partsDataGrid.Columns["Instock"].HeaderText = "Inventory";
+            }
+            if (prodDataGrid.Columns.Contains("Instock"))
+            {
+                prodDataGrid.Columns["Instock"].HeaderText = "Inventory";
+            }
+        }
+
+        private void label2_Click(object sender, EventArgs e)
         {
 
         }
 
         private void PartAddButton_Click(object sender, EventArgs e)
         {
-            Part part = new Inhouse();
-            {
-                part.PartId = 1;
-                part.Price = 1;
-                part.Max = 10;
-                part.Min = 1;
-                part.InStock = 1;
-                part.Name = "partOne";
-            }
+            //Part part = new Inhouse();
+            //{
+            //    part.PartId = 1;
+            //    part.Price = 1;
+            //    part.Max = 10;
+            //    part.Min = 1;
+            //    part.InStock = 1;
+            //    part.Name = "partOne";
+            //}
 
-             inventory.AddPart(part);
+            //inventory.AddPart(part);
 
 
-            //AddPartForm addPart = new AddPartForm(this);
-            //addPart.ShowDialog();
+            AddPartForm addPart = new AddPartForm(this);
+            addPart.ShowDialog();
 
         }
 
         private void PartModifyButton_Click(object sender, EventArgs e)
         {
-            if (partsDataGrid.Rows.Count > 0)
-            {
-                ModifyPart modPart = new ModifyPart(this);
-                modPart.ModIDTextBox.Text = partsDataGrid.CurrentRow.Cells[0].Value.ToString();
-                modPart.ModNameTextBox.Text = partsDataGrid.CurrentRow.Cells[1].Value.ToString();
-                modPart.ModPriceTextBox.Text = partsDataGrid.CurrentRow.Cells[2].Value.ToString();
-                modPart.InvLabelTextBox.Text = partsDataGrid.CurrentRow.Cells[3].Value.ToString();
-                modPart.ModPartMinTextbox.Text = partsDataGrid.CurrentRow.Cells[4].Value.ToString();
-                modPart.ModPartMaxTextbox.Text = partsDataGrid.CurrentRow.Cells[5].Value.ToString();
 
-                modPart.Show();
+            if (partsDataGrid.CurrentRow !=null )
+            {
+                Part selectedPart = inventory.LookupPart(int.Parse(partsDataGrid.CurrentRow.Cells[0].Value.ToString()));
+                ModifyPart modPartForm = new ModifyPart(this);
+                if(selectedPart is Inhouse modPart1)                      
+                { 
+                     modPartForm.ModIDTextBox.Text = modPart1.PartId.ToString();
+                     modPartForm.ModNameTextBox.Text = modPart1.Name;
+                     modPartForm.ModPriceTextBox.Text = modPart1.Price.ToString();
+                     modPartForm.InvLabelTextBox.Text = modPart1.InStock.ToString();
+                     modPartForm.ModPartMinTextbox.Text = modPart1.Min.ToString();
+                     modPartForm.ModPartMaxTextbox.Text = modPart1.Max.ToString();
+                     modPartForm.ModPartCompTextbox.Text = modPart1.MachineID.ToString();
+                     modPartForm.ModInhouseRadioButton.Checked = true;
+                }
+                if(selectedPart is OutSourced modPart2)
+                {
+                    modPartForm.ModIDTextBox.Text = modPart2.PartId.ToString();
+                    modPartForm.ModNameTextBox.Text = modPart2.Name;
+                    modPartForm.ModPriceTextBox.Text = modPart2.Price.ToString();
+                    modPartForm.InvLabelTextBox.Text = modPart2.InStock.ToString();
+                    modPartForm.ModPartMinTextbox.Text = modPart2.Min.ToString();
+                    modPartForm.ModPartMaxTextbox.Text = modPart2.Max.ToString();
+                    modPartForm.ModPartCompTextbox.Text = modPart2.CompanyName.ToString();
+                    modPartForm.ModpartOutsourcedRadioButton.Checked = true;
+                }
+
+                modPartForm.Show();
             }
             else MessageBox.Show("No Selected Part.");
         }
@@ -82,12 +113,14 @@ namespace InventoryManagementApp
         //Deletes the selected row of the parts data grid
         private void PartDeleteButton_Click(object sender, EventArgs e)
         {
-            if (partsDataGrid.SelectedRows.Count > 0)
+            if (partsDataGrid.CurrentRow != null)
             {
-                inventory.DeletePart(
-                    inventory.LookupPart(
-                        int.Parse(partsDataGrid.CurrentRow.Cells[0].Value.ToString())
-                ));
+                int selectedPart = int.Parse(partsDataGrid.CurrentRow.Cells[0].Value.ToString());
+                Part deletePart = inventory.LookupPart(selectedPart);
+                if (inventory.DeletePart(deletePart))
+                {
+                    inventory.AllParts.Remove(deletePart);
+                }
             }
         }
 
@@ -96,7 +129,7 @@ namespace InventoryManagementApp
         {
             try
             {
-                if (prodDataGrid.SelectedRows.Count > 0)
+                if (prodDataGrid.CurrentRow != null)
                 {
                     int selecedProd = int.Parse(prodDataGrid.CurrentRow.Cells[0].Value.ToString());
                     Product delProd = inventory.LookupProduct(selecedProd);
@@ -159,6 +192,25 @@ namespace InventoryManagementApp
             }
 
         }
+
+        private void ProdModifyButton_Click(object sender, EventArgs e)
+        {
+            if (prodDataGrid.CurrentRow != null) 
+            {
+                Product modProd = inventory.LookupProduct(int.Parse(prodDataGrid.CurrentRow.Cells[0].Value.ToString()));
+
+                ModifyProduct ModProdForm = new ModifyProduct(this);
+                ModProdForm.ModProdIDTextbox.Text = modProd.ProductID.ToString();
+                ModProdForm.ModProdNameTextBox.Text = modProd.Name;
+                ModProdForm.ModProdPriceTextBox.Text = modProd.Price.ToString();
+                ModProdForm.ModProdInvTextBox.Text = modProd.InStock.ToString();
+                ModProdForm.ModProdMinTextBox.Text = modProd.Min.ToString();
+                ModProdForm.ModProdMaxTextBox.Text = modProd.Max.ToString();
+                ModProdForm.pendingAssPart = new BindingList<Part>(modProd.assPart.ToList());
+                ModProdForm.ModAssPartGridView.DataSource = ModProdForm.pendingAssPart;
+                ModProdForm.Show();
+            }
+        }
     }
 
     public class Inventory
@@ -200,13 +252,15 @@ namespace InventoryManagementApp
             {
                 if (id == prod.ProductID)
                 {
+                    var confirm = MessageBox.Show("Are you sure that you want to delete this product?", "Confirm choice", MessageBoxButtons.YesNo);
+
+                    if (confirm == DialogResult.Yes)
+                    {
+                        return true;
+                    }
                     
-                    return true;
                 }
-                else if (id != prod.ProductID)
-                {
-                    return false;
-                }
+                
                 else return false;
             }
             return false;
@@ -237,6 +291,7 @@ namespace InventoryManagementApp
                     prod.Max = product.Max;
                     prod.Min = product.Min;
                     prod.Price = product.Price;
+                    prod.assPart = product.assPart;
                 }
             }
 
@@ -251,12 +306,17 @@ namespace InventoryManagementApp
 
         public bool DeletePart(Part part)
         {
-           foreach(Part del in AllParts)
+
+            foreach (Part del in AllParts)
             {
                 if (part == del)
                 {
-                    AllParts.Remove(del);
-                    return true;
+                    var confirm = MessageBox.Show("Are you sure that you want to delete this part?", "Confirm choice", MessageBoxButtons.YesNo);
+
+                    if (confirm == DialogResult.Yes)
+                    {
+                        return true;
+                    }
                 }
                 
             }
@@ -334,13 +394,12 @@ namespace InventoryManagementApp
                 {
                     return true;
                 }
-                else return false;
-            };
+            }
             return false;
             
         }
 
-        public Part? lookupAssociatedPart(int id)
+        public Part? LookupAssociatedPart(int id)
         {
             foreach(Part part in AssociatedParts)
             {
@@ -348,7 +407,7 @@ namespace InventoryManagementApp
                 {
                     return part;
                 }
-            };
+            }
             return null;
 
         }

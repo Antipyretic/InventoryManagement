@@ -127,7 +127,6 @@ namespace InventoryManagementApp
                     }
                     else
                     {
-                        _form1.partsDataGrid.CurrentRow.Cells[7].Value = AddPartCompTextBox.Text;
                         _form1.inventory.AddPart(_outPart);
                         this.Close();
                     }
@@ -195,7 +194,7 @@ namespace InventoryManagementApp
 
         private void AddPartPriceTextBox_Validating(object sender, CancelEventArgs e)
         {
-            if(!int.TryParse(AddPartPriceTextBox.Text, out int price))
+            if(!decimal.TryParse(AddPartPriceTextBox.Text, out decimal price))
             {
                 e.Cancel= true;
                 AddPartPriceTextBox.Focus();

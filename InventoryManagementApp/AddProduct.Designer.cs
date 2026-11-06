@@ -60,11 +60,11 @@
             // 
             // ProdDeleteButton
             // 
-            ProdDeleteButton.Location = new Point(754, 707);
+            ProdDeleteButton.Location = new Point(737, 706);
             ProdDeleteButton.Name = "ProdDeleteButton";
-            ProdDeleteButton.Size = new Size(54, 35);
+            ProdDeleteButton.Size = new Size(71, 35);
             ProdDeleteButton.TabIndex = 11;
-            ProdDeleteButton.Text = "Delete";
+            ProdDeleteButton.Text = "Remove";
             ProdDeleteButton.UseVisualStyleBackColor = true;
             ProdDeleteButton.Click += ProdDeleteButton_Click;
             // 
@@ -81,7 +81,7 @@
             // 
             // ProdAddButton
             // 
-            ProdAddButton.Location = new Point(160, 502);
+            ProdAddButton.Location = new Point(754, 359);
             ProdAddButton.Name = "ProdAddButton";
             ProdAddButton.Size = new Size(54, 35);
             ProdAddButton.TabIndex = 9;
@@ -160,6 +160,7 @@
             AddProdMaxTextBox.Name = "AddProdMaxTextBox";
             AddProdMaxTextBox.Size = new Size(189, 23);
             AddProdMaxTextBox.TabIndex = 22;
+            AddProdMaxTextBox.Validating += AddProdMaxTextBox_Validating;
             // 
             // AddProdPriceTextBox
             // 
@@ -194,6 +195,7 @@
             AddProdMinTextBox.Size = new Size(189, 23);
             AddProdMinTextBox.TabIndex = 18;
             AddProdMinTextBox.TextChanged += AddProdMinTextBox_TextChanged;
+            AddProdMinTextBox.Validating += AddProdMinTextBox_Validating;
             // 
             // AddProdIdTextBox
             // 

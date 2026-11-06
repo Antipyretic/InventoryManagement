@@ -109,6 +109,7 @@
             ProdModifyButton.TabIndex = 6;
             ProdModifyButton.Text = "Modify";
             ProdModifyButton.UseVisualStyleBackColor = true;
+            ProdModifyButton.Click += ProdModifyButton_Click;
             // 
             // ProdAddButton
             // 
@@ -127,7 +128,7 @@
             partsDataGrid.Name = "partsDataGrid";
             partsDataGrid.Size = new Size(560, 220);
             partsDataGrid.TabIndex = 8;
-            partsDataGrid.CellContentClick += partsDataGrid_CellContentClick;
+            //partsDataGrid.CellContentClick += partsDataGrid_CellContentClick;
             // 
             // partBindingSource
             // 

@@ -28,25 +28,14 @@
         /// </summary>
         private void InitializeComponent()
         {
+            components = new System.ComponentModel.Container();
             AllModProdProdSearchButton = new Button();
             ModProdFormLabel = new Label();
             ModAssPartGridLabel = new Label();
             ModAssPartGridView = new DataGridView();
-            dataGridViewTextBoxColumn1 = new DataGridViewTextBoxColumn();
-            dataGridViewTextBoxColumn2 = new DataGridViewTextBoxColumn();
-            dataGridViewTextBoxColumn3 = new DataGridViewTextBoxColumn();
-            dataGridViewTextBoxColumn4 = new DataGridViewTextBoxColumn();
-            dataGridViewTextBoxColumn5 = new DataGridViewTextBoxColumn();
-            dataGridViewTextBoxColumn6 = new DataGridViewTextBoxColumn();
             ModProdAllPartsGridLabel = new Label();
             ModProdSearchTextBox = new TextBox();
             AllModPartsGridView = new DataGridView();
-            PartID = new DataGridViewTextBoxColumn();
-            Name = new DataGridViewTextBoxColumn();
-            Inventory = new DataGridViewTextBoxColumn();
-            Price = new DataGridViewTextBoxColumn();
-            Min = new DataGridViewTextBoxColumn();
-            Max = new DataGridViewTextBoxColumn();
             ModProdMaxLabel = new Label();
             ModProdMinLabel = new Label();
             ModProdPriceLabel = new Label();
@@ -63,8 +52,10 @@
             ModProdSaveButton = new Button();
             ModProdAddButton = new Button();
             ModProdCancelButton = new Button();
+            errorProviderModProd = new ErrorProvider(components);
             ((System.ComponentModel.ISupportInitialize)ModAssPartGridView).BeginInit();
             ((System.ComponentModel.ISupportInitialize)AllModPartsGridView).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)errorProviderModProd).BeginInit();
             SuspendLayout();
             // 
             // AllModProdProdSearchButton
@@ -75,6 +66,7 @@
             AllModProdProdSearchButton.TabIndex = 59;
             AllModProdProdSearchButton.Text = "Search";
             AllModProdProdSearchButton.UseVisualStyleBackColor = true;
+            AllModProdProdSearchButton.Click += AllModProdProdSearchButton_Click;
             // 
             // ModProdFormLabel
             // 
@@ -98,50 +90,10 @@
             // ModAssPartGridView
             // 
             ModAssPartGridView.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            ModAssPartGridView.Columns.AddRange(new DataGridViewColumn[] { dataGridViewTextBoxColumn1, dataGridViewTextBoxColumn2, dataGridViewTextBoxColumn3, dataGridViewTextBoxColumn4, dataGridViewTextBoxColumn5, dataGridViewTextBoxColumn6 });
             ModAssPartGridView.Location = new Point(243, 432);
             ModAssPartGridView.Name = "ModAssPartGridView";
             ModAssPartGridView.Size = new Size(573, 262);
             ModAssPartGridView.TabIndex = 56;
-            // 
-            // dataGridViewTextBoxColumn1
-            // 
-            dataGridViewTextBoxColumn1.Frozen = true;
-            dataGridViewTextBoxColumn1.HeaderText = "Part ID";
-            dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
-            // 
-            // dataGridViewTextBoxColumn2
-            // 
-            dataGridViewTextBoxColumn2.Frozen = true;
-            dataGridViewTextBoxColumn2.HeaderText = "Name";
-            dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
-            // 
-            // dataGridViewTextBoxColumn3
-            // 
-            dataGridViewTextBoxColumn3.Frozen = true;
-            dataGridViewTextBoxColumn3.HeaderText = "Inventory";
-            dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
-            dataGridViewTextBoxColumn3.Width = 75;
-            // 
-            // dataGridViewTextBoxColumn4
-            // 
-            dataGridViewTextBoxColumn4.Frozen = true;
-            dataGridViewTextBoxColumn4.HeaderText = "Price";
-            dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
-            // 
-            // dataGridViewTextBoxColumn5
-            // 
-            dataGridViewTextBoxColumn5.Frozen = true;
-            dataGridViewTextBoxColumn5.HeaderText = "Min";
-            dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
-            dataGridViewTextBoxColumn5.Width = 75;
-            // 
-            // dataGridViewTextBoxColumn6
-            // 
-            dataGridViewTextBoxColumn6.Frozen = true;
-            dataGridViewTextBoxColumn6.HeaderText = "Max";
-            dataGridViewTextBoxColumn6.Name = "dataGridViewTextBoxColumn6";
-            dataGridViewTextBoxColumn6.Width = 75;
             // 
             // ModProdAllPartsGridLabel
             // 
@@ -158,54 +110,15 @@
             ModProdSearchTextBox.Name = "ModProdSearchTextBox";
             ModProdSearchTextBox.Size = new Size(269, 23);
             ModProdSearchTextBox.TabIndex = 54;
+            ModProdSearchTextBox.TextChanged += ModProdSearchTextBox_TextChanged;
             // 
             // AllModPartsGridView
             // 
             AllModPartsGridView.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            AllModPartsGridView.Columns.AddRange(new DataGridViewColumn[] { PartID, Name, Inventory, Price, Min, Max });
             AllModPartsGridView.Location = new Point(243, 83);
             AllModPartsGridView.Name = "AllModPartsGridView";
             AllModPartsGridView.Size = new Size(573, 262);
             AllModPartsGridView.TabIndex = 53;
-            // 
-            // PartID
-            // 
-            PartID.Frozen = true;
-            PartID.HeaderText = "Part ID";
-            PartID.Name = "PartID";
-            // 
-            // Name
-            // 
-            Name.Frozen = true;
-            Name.HeaderText = "Name";
-            Name.Name = "Name";
-            // 
-            // Inventory
-            // 
-            Inventory.Frozen = true;
-            Inventory.HeaderText = "Inventory";
-            Inventory.Name = "Inventory";
-            Inventory.Width = 75;
-            // 
-            // Price
-            // 
-            Price.Frozen = true;
-            Price.HeaderText = "Price";
-            Price.Name = "Price";
-            // 
-            // Min
-            // 
-            Min.Frozen = true;
-            Min.HeaderText = "Min";
-            Min.Name = "Min";
-            Min.Width = 75;
-            // 
-            // Max
-            // 
-            Max.Frozen = true;
-            Max.HeaderText = "Max";
-            Max.Name = "Max";
-            Max.Width = 75;
             // 
             // ModProdMaxLabel
             // 
@@ -267,6 +180,7 @@
             ModProdMaxTextBox.Name = "ModProdMaxTextBox";
             ModProdMaxTextBox.Size = new Size(189, 23);
             ModProdMaxTextBox.TabIndex = 46;
+            ModProdMaxTextBox.TextChanged += ModProdMaxTextBox_TextChanged;
             // 
             // ModProdPriceTextBox
             // 
@@ -274,6 +188,7 @@
             ModProdPriceTextBox.Name = "ModProdPriceTextBox";
             ModProdPriceTextBox.Size = new Size(189, 23);
             ModProdPriceTextBox.TabIndex = 45;
+            ModProdPriceTextBox.TextChanged += ModProdPriceTextBox_TextChanged;
             // 
             // ModProdInvTextBox
             // 
@@ -281,6 +196,7 @@
             ModProdInvTextBox.Name = "ModProdInvTextBox";
             ModProdInvTextBox.Size = new Size(189, 23);
             ModProdInvTextBox.TabIndex = 44;
+            ModProdInvTextBox.TextChanged += ModProdInvTextBox_TextChanged;
             // 
             // ModProdNameTextBox
             // 
@@ -288,6 +204,8 @@
             ModProdNameTextBox.Name = "ModProdNameTextBox";
             ModProdNameTextBox.Size = new Size(189, 23);
             ModProdNameTextBox.TabIndex = 43;
+            ModProdNameTextBox.TextChanged += ModProdNameTextBox_TextChanged;
+            ModProdNameTextBox.Validating += ModProdNameTextBox_Validating;
             // 
             // ModProdMinTextBox
             // 
@@ -295,6 +213,7 @@
             ModProdMinTextBox.Name = "ModProdMinTextBox";
             ModProdMinTextBox.Size = new Size(189, 23);
             ModProdMinTextBox.TabIndex = 42;
+            ModProdMinTextBox.TextChanged += ModProdMinTextBox_TextChanged;
             // 
             // ModProdIDTextbox
             // 
@@ -302,6 +221,8 @@
             ModProdIDTextbox.Name = "ModProdIDTextbox";
             ModProdIDTextbox.Size = new Size(189, 23);
             ModProdIDTextbox.TabIndex = 41;
+            ModProdIDTextbox.TextChanged += ModProdIDTextbox_TextChanged;
+            ModProdIDTextbox.Validating += ModProdIDTextbox_Validating;
             // 
             // ModProdDeleteButton
             // 
@@ -311,6 +232,7 @@
             ModProdDeleteButton.TabIndex = 40;
             ModProdDeleteButton.Text = "Delete";
             ModProdDeleteButton.UseVisualStyleBackColor = true;
+            ModProdDeleteButton.Click += ModProdDeleteButton_Click;
             // 
             // ModProdSaveButton
             // 
@@ -320,15 +242,17 @@
             ModProdSaveButton.TabIndex = 39;
             ModProdSaveButton.Text = "Save";
             ModProdSaveButton.UseVisualStyleBackColor = true;
+            ModProdSaveButton.Click += ModProdSaveButton_Click;
             // 
             // ModProdAddButton
             // 
-            ModProdAddButton.Location = new Point(151, 496);
+            ModProdAddButton.Location = new Point(745, 353);
             ModProdAddButton.Name = "ModProdAddButton";
             ModProdAddButton.Size = new Size(54, 35);
             ModProdAddButton.TabIndex = 38;
             ModProdAddButton.Text = "Add";
             ModProdAddButton.UseVisualStyleBackColor = true;
+            ModProdAddButton.Click += ModProdAddButton_Click;
             // 
             // ModProdCancelButton
             // 
@@ -338,6 +262,11 @@
             ModProdCancelButton.TabIndex = 37;
             ModProdCancelButton.Text = "Cancel";
             ModProdCancelButton.UseVisualStyleBackColor = true;
+            ModProdCancelButton.Click += ModProdCancelButton_Click;
+            // 
+            // errorProviderModProd
+            // 
+            errorProviderModProd.ContainerControl = this;
             // 
             // ModifyProduct
             // 
@@ -367,10 +296,11 @@
             Controls.Add(ModProdSaveButton);
             Controls.Add(ModProdAddButton);
             Controls.Add(ModProdCancelButton);
-            //Name = "ModifyProduct";
+            Name = "ModifyProduct";
             Text = "ModifyProduct";
             ((System.ComponentModel.ISupportInitialize)ModAssPartGridView).EndInit();
             ((System.ComponentModel.ISupportInitialize)AllModPartsGridView).EndInit();
+            ((System.ComponentModel.ISupportInitialize)errorProviderModProd).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -380,37 +310,26 @@
         private Button AllModProdProdSearchButton;
         private Label ModProdFormLabel;
         private Label ModAssPartGridLabel;
-        private DataGridView ModAssPartGridView;
-        private DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
-        private DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
-        private DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
-        private DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
-        private DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
-        private DataGridViewTextBoxColumn dataGridViewTextBoxColumn6;
         private Label ModProdAllPartsGridLabel;
         private TextBox ModProdSearchTextBox;
         private DataGridView AllModPartsGridView;
-        private DataGridViewTextBoxColumn PartID;
-        private DataGridViewTextBoxColumn Name;
-        private DataGridViewTextBoxColumn Inventory;
-        private DataGridViewTextBoxColumn Price;
-        private DataGridViewTextBoxColumn Min;
-        private DataGridViewTextBoxColumn Max;
         private Label ModProdMaxLabel;
         private Label ModProdMinLabel;
         private Label ModProdPriceLabel;
         private Label ModProdInvLabel;
         private Label ModProdNameLabel;
         private Label ModProdIDLabel;
-        private TextBox ModProdMaxTextBox;
-        private TextBox ModProdPriceTextBox;
-        private TextBox ModProdInvTextBox;
-        private TextBox ModProdNameTextBox;
-        private TextBox ModProdMinTextBox;
-        private TextBox ModProdIDTextbox;
         private Button ModProdDeleteButton;
         private Button ModProdSaveButton;
         private Button ModProdAddButton;
         private Button ModProdCancelButton;
+        private ErrorProvider errorProviderModProd;
+        public TextBox ModProdIDTextbox;
+        public TextBox ModProdMaxTextBox;
+        public TextBox ModProdPriceTextBox;
+        public TextBox ModProdInvTextBox;
+        public TextBox ModProdNameTextBox;
+        public TextBox ModProdMinTextBox;
+        public DataGridView ModAssPartGridView;
     }
 }

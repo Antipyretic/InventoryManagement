@@ -263,8 +263,6 @@
         private Label ModPartIDLabel;
         private Button AddPartCancelButton;
         private Button AddPartSaveButton;
-        private RadioButton ModpartOutsourcedRadioButton;
-        private RadioButton ModInhouseRadioButton;
         private Label label1;
         public Label ModPartComLabel;
         public TextBox ModPartMaxTextbox;
@@ -274,5 +272,7 @@
         public TextBox ModPartMinTextbox;
         public TextBox ModPartCompTextbox;
         public TextBox ModIDTextBox;
+        public RadioButton ModpartOutsourcedRadioButton;
+        public RadioButton ModInhouseRadioButton;
     }
 }
