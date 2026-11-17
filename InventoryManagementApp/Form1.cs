@@ -16,10 +16,10 @@ namespace InventoryManagementApp
             partsDataGrid.DataBindingComplete += partsDataGrid_DataBindingComplete;
             prodDataGrid.DataBindingComplete += partsDataGrid_DataBindingComplete;
         }
-
+        
         private void Form1_Load(object sender, EventArgs e)
         {
-
+            
         }
 
         private void partsDataGrid_DataBindingComplete(object sender, DataGridViewBindingCompleteEventArgs e)
@@ -127,33 +127,38 @@ namespace InventoryManagementApp
         //Does the same as the part delete button.
         private void ProdDeleteButton_Click(object sender, EventArgs e)
         {
-            try
-            {
-                if (prodDataGrid.CurrentRow != null)
-                {
-                    int selecedProd = int.Parse(prodDataGrid.CurrentRow.Cells[0].Value.ToString());
-                    Product delProd = inventory.LookupProduct(selecedProd);
+            var confirm = MessageBox.Show("Are you sure that you want to delete this product?", "Confrim Choice", MessageBoxButtons.YesNo);
 
-                    switch (inventory.RemoveProduct(selecedProd))
+            if(confirm == DialogResult.Yes)
+            {
+                try
+                {
+                    if (prodDataGrid.CurrentRow != null)
                     {
-                        case true:
-                            inventory.Products.Remove(delProd);
-                            //MessageBox.Show("Selected Product was Deleted.");
-                            break;
-                        case false:
-                            MessageBox.Show("Could not find part");
-                            break;
+                        int selecedProd = int.Parse(prodDataGrid.CurrentRow.Cells[0].Value.ToString());
+                        Product delProd = inventory.LookupProduct(selecedProd);
+
+                        switch (inventory.RemoveProduct(selecedProd))
+                        {
+                            case true:
+                                inventory.Products.Remove(delProd);
+                                //MessageBox.Show("Selected Product was Deleted.");
+                                break;
+                            case false:
+                                MessageBox.Show("Could not find part");
+                                break;
+                        }
+                    }
+                    else
+                    {
+                        MessageBox.Show("There are no products to delete, or no row is selected.");
                     }
                 }
-                else
-                {
-                    MessageBox.Show("There are no products to delete, or no row is selected.");
-                }
-            }
 
-            catch (Exception execpt)
-            {
-                MessageBox.Show(execpt.Message);
+                catch (Exception execpt)
+                {
+                    MessageBox.Show(execpt.Message);
+                }
             }
 
         }
@@ -306,8 +311,8 @@ namespace InventoryManagementApp
 
         public bool DeletePart(Part part)
         {
-
-            foreach (Part del in AllParts)
+            
+            foreach (Part del in AllParts.ToList())
             {
                 if (part == del)
                 {
@@ -315,7 +320,19 @@ namespace InventoryManagementApp
 
                     if (confirm == DialogResult.Yes)
                     {
-                        return true;
+                        foreach(Product prod in Products)
+                        {
+                            if(prod.LookupAssociatedPart(del.PartId) == part && prod.LookupAssociatedPart(del.PartId) != null)
+                            {
+                                //AllParts.Remove(del);
+                                MessageBox.Show("This part is an accociated part and cannot be deleted.");
+                                
+                            }
+                            else 
+                            { 
+                                AllParts.Remove(del); 
+                            }
+                        }
                     }
                 }
                 
@@ -350,7 +367,15 @@ namespace InventoryManagementApp
                     modPart.Min = part.Min;
                     modPart.InStock = part.InStock;
                 }
+            }
+        }
 
+        public void CheckAssociatedParts(int id)
+        {
+            
+            foreach(Product prod in Products)
+            {
+              
             }
         }
 
@@ -403,13 +428,12 @@ namespace InventoryManagementApp
         {
             foreach(Part part in AssociatedParts)
             {
-                if (id == part.PartId)
+                if(id == part.PartId)
                 {
                     return part;
                 }
             }
             return null;
-
         }
 
         

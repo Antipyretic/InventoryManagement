@@ -20,9 +20,7 @@ namespace InventoryManagementApp
             InitializeComponent();
             _form1 = form1;
             AllModPartsGridView.DataSource = _form1.inventory.AllParts;
-            ModProdIDTextbox.Enabled = false;
-            
-            
+            ModProdIDTextbox.Enabled = false;            
         }
 
         private void ModProdIDTextbox_TextChanged(object sender, EventArgs e)
@@ -66,12 +64,6 @@ namespace InventoryManagementApp
                     Part newPart = _form1.inventory.LookupPart(selectedPart);
                     pendingAssPart.Add(newPart);
                 }
-
-
-            }
-            else
-            {
-                MessageBox.Show("There are no parts selected.");
             }
         }
 
@@ -106,7 +98,6 @@ namespace InventoryManagementApp
                             var confirm = MessageBox.Show("Are you sure you want to delete the associated part?", "Confirm Choice", MessageBoxButtons.YesNo);
                             if (confirm == DialogResult.Yes)
                             {
-                                MessageBox.Show("something was here");
                                 pendingAssPart.Remove(part);
                             }
                         }

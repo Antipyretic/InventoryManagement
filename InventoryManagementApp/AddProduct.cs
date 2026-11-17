@@ -14,7 +14,7 @@ namespace InventoryManagementApp
         private Form1 _form1;
         private BindingList<Part> pendAssPart;
 
-
+        public int rowID = 0;
 
         public AddProduct(Form1 form1)
         {
@@ -23,10 +23,22 @@ namespace InventoryManagementApp
             pendAssPart = new BindingList<Part>();
             AllPartsDataGrid.DataSource = _form1.inventory.AllParts;
             AssPartGridView.DataSource = pendAssPart;
+            AddProdIdTextBox.Enabled = false;
 
         }
         private void AddProduct_Load(object sender, EventArgs e)
         {
+            if(_form1.inventory.Products.Count == 0)
+            {
+                rowID = 1;
+                AddProdIdTextBox.Text = rowID.ToString();
+            }
+            else
+            {
+                rowID = _form1.inventory.Products.Max(x => x.ProductID) + 1;
+                AddProdIdTextBox.Text = rowID.ToString();
+            }    
+
 
         }
 

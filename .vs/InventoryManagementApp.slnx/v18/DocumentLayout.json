@@ -3,48 +3,48 @@
   "WorkspaceRootPath": "C:\\Users\\papa bigtime\\Builds\\InventoryManagement\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{F620D827-50B5-1255-F025-12ED2186BC84}|InventoryManagementApp\\InventoryManagementApp.csproj|c:\\users\\papa bigtime\\builds\\inventorymanagement\\inventorymanagementapp\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{F620D827-50B5-1255-F025-12ED2186BC84}|InventoryManagementApp\\InventoryManagementApp.csproj|solutionrelative:inventorymanagementapp\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{F620D827-50B5-1255-F025-12ED2186BC84}|InventoryManagementApp\\InventoryManagementApp.csproj|c:\\users\\papa bigtime\\builds\\inventorymanagement\\inventorymanagementapp\\addpartform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F620D827-50B5-1255-F025-12ED2186BC84}|InventoryManagementApp\\InventoryManagementApp.csproj|solutionrelative:inventorymanagementapp\\addpartform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{F620D827-50B5-1255-F025-12ED2186BC84}|InventoryManagementApp\\InventoryManagementApp.csproj|c:\\users\\papa bigtime\\builds\\inventorymanagement\\inventorymanagementapp\\modifyproduct.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{F620D827-50B5-1255-F025-12ED2186BC84}|InventoryManagementApp\\InventoryManagementApp.csproj|solutionrelative:inventorymanagementapp\\modifyproduct.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
+      "AbsoluteMoniker": "D:0:0:{F620D827-50B5-1255-F025-12ED2186BC84}|InventoryManagementApp\\InventoryManagementApp.csproj|c:\\users\\papa bigtime\\builds\\inventorymanagement\\inventorymanagementapp\\modifypart.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F620D827-50B5-1255-F025-12ED2186BC84}|InventoryManagementApp\\InventoryManagementApp.csproj|solutionrelative:inventorymanagementapp\\modifypart.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{F620D827-50B5-1255-F025-12ED2186BC84}|InventoryManagementApp\\InventoryManagementApp.csproj|c:\\users\\papa bigtime\\builds\\inventorymanagement\\inventorymanagementapp\\addproduct.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{F620D827-50B5-1255-F025-12ED2186BC84}|InventoryManagementApp\\InventoryManagementApp.csproj|solutionrelative:inventorymanagementapp\\addproduct.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{F620D827-50B5-1255-F025-12ED2186BC84}|InventoryManagementApp\\InventoryManagementApp.csproj|c:\\users\\papa bigtime\\builds\\inventorymanagement\\inventorymanagementapp\\addpartform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{F620D827-50B5-1255-F025-12ED2186BC84}|InventoryManagementApp\\InventoryManagementApp.csproj|solutionrelative:inventorymanagementapp\\addpartform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{F620D827-50B5-1255-F025-12ED2186BC84}|InventoryManagementApp\\InventoryManagementApp.csproj|C:\\Users\\papa bigtime\\Builds\\InventoryManagement\\inventorymanagementapp\\modifypart.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{F620D827-50B5-1255-F025-12ED2186BC84}|InventoryManagementApp\\InventoryManagementApp.csproj|solutionrelative:inventorymanagementapp\\modifypart.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F620D827-50B5-1255-F025-12ED2186BC84}|InventoryManagementApp\\InventoryManagementApp.csproj|C:\\Users\\papa bigtime\\Builds\\InventoryManagement\\inventorymanagementapp\\addpartform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{F620D827-50B5-1255-F025-12ED2186BC84}|InventoryManagementApp\\InventoryManagementApp.csproj|solutionrelative:inventorymanagementapp\\addpartform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
       "AbsoluteMoniker": "D:0:0:{F620D827-50B5-1255-F025-12ED2186BC84}|InventoryManagementApp\\InventoryManagementApp.csproj|C:\\Users\\papa bigtime\\Builds\\InventoryManagement\\inventorymanagementapp\\addproduct.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{F620D827-50B5-1255-F025-12ED2186BC84}|InventoryManagementApp\\InventoryManagementApp.csproj|solutionrelative:inventorymanagementapp\\addproduct.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
+      "AbsoluteMoniker": "D:0:0:{F620D827-50B5-1255-F025-12ED2186BC84}|InventoryManagementApp\\InventoryManagementApp.csproj|c:\\users\\papa bigtime\\builds\\inventorymanagement\\inventorymanagementapp\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F620D827-50B5-1255-F025-12ED2186BC84}|InventoryManagementApp\\InventoryManagementApp.csproj|solutionrelative:inventorymanagementapp\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{F620D827-50B5-1255-F025-12ED2186BC84}|InventoryManagementApp\\InventoryManagementApp.csproj|c:\\users\\papa bigtime\\builds\\inventorymanagement\\inventorymanagementapp\\addproduct.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{F620D827-50B5-1255-F025-12ED2186BC84}|InventoryManagementApp\\InventoryManagementApp.csproj|solutionrelative:inventorymanagementapp\\addproduct.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{F620D827-50B5-1255-F025-12ED2186BC84}|InventoryManagementApp\\InventoryManagementApp.csproj|c:\\users\\papa bigtime\\builds\\inventorymanagement\\inventorymanagementapp\\modifypart.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{F620D827-50B5-1255-F025-12ED2186BC84}|InventoryManagementApp\\InventoryManagementApp.csproj|solutionrelative:inventorymanagementapp\\modifypart.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{F620D827-50B5-1255-F025-12ED2186BC84}|InventoryManagementApp\\InventoryManagementApp.csproj|c:\\users\\papa bigtime\\builds\\inventorymanagement\\inventorymanagementapp\\modifypart.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{F620D827-50B5-1255-F025-12ED2186BC84}|InventoryManagementApp\\InventoryManagementApp.csproj|solutionrelative:inventorymanagementapp\\modifypart.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{F620D827-50B5-1255-F025-12ED2186BC84}|InventoryManagementApp\\InventoryManagementApp.csproj|c:\\users\\papa bigtime\\builds\\inventorymanagement\\inventorymanagementapp\\form1.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{F620D827-50B5-1255-F025-12ED2186BC84}|InventoryManagementApp\\InventoryManagementApp.csproj|solutionrelative:inventorymanagementapp\\form1.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{F620D827-50B5-1255-F025-12ED2186BC84}|InventoryManagementApp\\InventoryManagementApp.csproj|c:\\users\\papa bigtime\\builds\\inventorymanagement\\inventorymanagementapp\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "AbsoluteMoniker": "D:0:0:{F620D827-50B5-1255-F025-12ED2186BC84}|InventoryManagementApp\\InventoryManagementApp.csproj|C:\\Users\\papa bigtime\\Builds\\InventoryManagement\\inventorymanagementapp\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{F620D827-50B5-1255-F025-12ED2186BC84}|InventoryManagementApp\\InventoryManagementApp.csproj|solutionrelative:inventorymanagementapp\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{F620D827-50B5-1255-F025-12ED2186BC84}|InventoryManagementApp\\InventoryManagementApp.csproj|C:\\Users\\papa bigtime\\Builds\\InventoryManagement\\inventorymanagementapp\\addpartform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{F620D827-50B5-1255-F025-12ED2186BC84}|InventoryManagementApp\\InventoryManagementApp.csproj|solutionrelative:inventorymanagementapp\\addpartform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
       "AbsoluteMoniker": "D:0:0:{F620D827-50B5-1255-F025-12ED2186BC84}|InventoryManagementApp\\InventoryManagementApp.csproj|C:\\Users\\papa bigtime\\Builds\\InventoryManagement\\inventorymanagementapp\\modifyproduct.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
@@ -57,18 +57,18 @@
       "VerticalTabListWidth": 256,
       "DocumentGroups": [
         {
-          "DockedWidth": 185,
-          "SelectedChildIndex": 0,
+          "DockedWidth": 190,
+          "SelectedChildIndex": 5,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 7,
               "Title": "Form1.cs",
               "DocumentMoniker": "C:\\Users\\papa bigtime\\Builds\\InventoryManagement\\InventoryManagementApp\\Form1.cs",
               "RelativeDocumentMoniker": "InventoryManagementApp\\Form1.cs",
               "ToolTip": "C:\\Users\\papa bigtime\\Builds\\InventoryManagement\\InventoryManagementApp\\Form1.cs",
               "RelativeToolTip": "InventoryManagementApp\\Form1.cs",
-              "ViewState": "AgIAABgBAAAAAAAAAAAnwDIBAAAeAAAAAAAAAA==",
+              "ViewState": "AgIAAFgAAAAAAAAAAAAqwJAAAABCAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-10-05T15:26:47.797Z",
               "IsPinned": true,
@@ -80,7 +80,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 8,
               "Title": "AddProduct.Designer.cs",
               "DocumentMoniker": "C:\\Users\\papa bigtime\\Builds\\InventoryManagement\\InventoryManagementApp\\AddProduct.Designer.cs",
               "RelativeDocumentMoniker": "InventoryManagementApp\\AddProduct.Designer.cs",
@@ -93,7 +93,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
+              "DocumentIndex": 5,
               "Title": "AddPartForm.cs [Design]",
               "DocumentMoniker": "C:\\Users\\papa bigtime\\Builds\\InventoryManagement\\InventoryManagementApp\\AddPartForm.cs",
               "RelativeDocumentMoniker": "InventoryManagementApp\\AddPartForm.cs",
@@ -105,7 +105,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 6,
               "Title": "AddProduct.cs [Design]",
               "DocumentMoniker": "C:\\Users\\papa bigtime\\Builds\\InventoryManagement\\InventoryManagementApp\\AddProduct.cs",
               "RelativeDocumentMoniker": "InventoryManagementApp\\AddProduct.cs",
@@ -117,19 +117,31 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 0,
+              "Title": "AddPartForm.cs",
+              "DocumentMoniker": "C:\\Users\\papa bigtime\\Builds\\InventoryManagement\\InventoryManagementApp\\AddPartForm.cs",
+              "RelativeDocumentMoniker": "InventoryManagementApp\\AddPartForm.cs",
+              "ToolTip": "C:\\Users\\papa bigtime\\Builds\\InventoryManagement\\InventoryManagementApp\\AddPartForm.cs",
+              "RelativeToolTip": "InventoryManagementApp\\AddPartForm.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAALoAAAAMAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-10-16T20:02:25.92Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
               "Title": "Form1.cs [Design]",
               "DocumentMoniker": "C:\\Users\\papa bigtime\\Builds\\InventoryManagement\\InventoryManagementApp\\Form1.cs",
               "RelativeDocumentMoniker": "InventoryManagementApp\\Form1.cs",
               "ToolTip": "C:\\Users\\papa bigtime\\Builds\\InventoryManagement\\InventoryManagementApp\\Form1.cs [Design]",
               "RelativeToolTip": "InventoryManagementApp\\Form1.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-10-26T18:27:35Z",
-              "EditorCaption": " [Design]"
+              "WhenOpened": "2026-10-26T18:27:35Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 9,
               "Title": "Form1.Designer.cs",
               "DocumentMoniker": "C:\\Users\\papa bigtime\\Builds\\InventoryManagement\\InventoryManagementApp\\Form1.Designer.cs",
               "RelativeDocumentMoniker": "InventoryManagementApp\\Form1.Designer.cs",
@@ -137,8 +149,7 @@
               "RelativeToolTip": "InventoryManagementApp\\Form1.Designer.cs",
               "ViewState": "AgIAAGgAAAAAAAAAAAAwwAEBAAAkAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-10-26T18:27:52.297Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-10-26T18:27:52.297Z"
             },
             {
               "$type": "Document",
@@ -155,33 +166,20 @@
           ]
         },
         {
-          "DockedWidth": 215,
-          "SelectedChildIndex": 2,
+          "DockedWidth": 210,
+          "SelectedChildIndex": 1,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 2,
               "Title": "ModifyPart.cs",
               "DocumentMoniker": "C:\\Users\\papa bigtime\\Builds\\InventoryManagement\\InventoryManagementApp\\ModifyPart.cs",
               "RelativeDocumentMoniker": "InventoryManagementApp\\ModifyPart.cs",
               "ToolTip": "C:\\Users\\papa bigtime\\Builds\\InventoryManagement\\InventoryManagementApp\\ModifyPart.cs",
               "RelativeToolTip": "InventoryManagementApp\\ModifyPart.cs",
-              "ViewState": "AgIAAGoAAAAAAAAAAAAcwIoAAAAZAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAANAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-10-18T23:19:56.672Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "AddPartForm.cs",
-              "DocumentMoniker": "C:\\Users\\papa bigtime\\Builds\\InventoryManagement\\InventoryManagementApp\\AddPartForm.cs",
-              "RelativeDocumentMoniker": "InventoryManagementApp\\AddPartForm.cs",
-              "ToolTip": "C:\\Users\\papa bigtime\\Builds\\InventoryManagement\\InventoryManagementApp\\AddPartForm.cs",
-              "RelativeToolTip": "InventoryManagementApp\\AddPartForm.cs",
-              "ViewState": "AgIAAFcAAAAAAAAAAAAkwMIAAABVAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-10-16T20:02:25.92Z",
               "EditorCaption": ""
             },
             {
@@ -192,27 +190,27 @@
               "RelativeDocumentMoniker": "InventoryManagementApp\\ModifyProduct.cs",
               "ToolTip": "C:\\Users\\papa bigtime\\Builds\\InventoryManagement\\InventoryManagementApp\\ModifyProduct.cs",
               "RelativeToolTip": "InventoryManagementApp\\ModifyProduct.cs",
-              "ViewState": "AgIAAFgAAAAAAAAAAAAUwIcAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAGMAAAAdAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-10-23T14:31:15.967Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 3,
               "Title": "AddProduct.cs",
               "DocumentMoniker": "C:\\Users\\papa bigtime\\Builds\\InventoryManagement\\InventoryManagementApp\\AddProduct.cs",
               "RelativeDocumentMoniker": "InventoryManagementApp\\AddProduct.cs",
               "ToolTip": "C:\\Users\\papa bigtime\\Builds\\InventoryManagement\\InventoryManagementApp\\AddProduct.cs",
               "RelativeToolTip": "InventoryManagementApp\\AddProduct.cs",
-              "ViewState": "AgIAAEcAAAAAAAAAAAAwwF0AAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABkAAAAtAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-10-16T19:05:36.13Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 4,
               "Title": "ModifyPart.cs [Design]",
               "DocumentMoniker": "C:\\Users\\papa bigtime\\Builds\\InventoryManagement\\InventoryManagementApp\\ModifyPart.cs",
               "RelativeDocumentMoniker": "InventoryManagementApp\\ModifyPart.cs",

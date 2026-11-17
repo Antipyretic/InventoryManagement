@@ -184,12 +184,7 @@ namespace InventoryManagementApp
 
         private void AddPartNameTextBox_Validating(object sender, CancelEventArgs e)
         {
-            //if (string.IsNullOrEmpty(AddPartNameTextBox.Text))
-            //{
-            //    e.Cancel = true;
-            //    AddPartNameTextBox.Focus();
-            //    errorProvider1.SetError(AddPartNameTextBox, "Part name cannot be empty.");
-            //}
+            
         }
 
         private void AddPartPriceTextBox_Validating(object sender, CancelEventArgs e)
